@@ -1,0 +1,32 @@
+#navbar {
+    /* background-color: rgba(255, 255, 255, 15%); */
+    box-shadow: inset 1px 0 0 rgb(0, 0, 0, 10%);
+    backdrop-filter: saturate(180%) blur(8px);
+    -webkit-box-shadow: inset 1px 0 0 rgb(0, 0, 0, 10%);
+    -webkit-backdrop-filter: saturate(180%) blur(8px);
+    border-bottom: 2px solid gray;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+#navbar .navbarTitle {
+    /* color: white; */
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+#navbar .navbarItem {
+    /* color: white; */
+    font-weight: bold;
+    margin: 0 1rem;
+}
+#navbar .navbarItemIcon {
+    margin-right: 0.5rem;
+}
