@@ -2,6 +2,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem; 
 }
 
 .content {
@@ -11,9 +12,9 @@ html {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
+    height: 90vh;
     padding: 0 5rem;
-    margin-bottom: 5rem;
 }
 .content header .profile {
     border-radius: 50%;
@@ -36,12 +37,12 @@ html {
     font-size: 1.8rem;
     font-family: sans-serif;
 }
-.content .about {
+.content #about {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.content .about .aboutContent {
+.content #about .aboutContent {
     background-color: #444;
     border-radius: 1rem;
 
@@ -50,12 +51,12 @@ html {
     padding: 1rem;
     width: 50%;
 }
-.content .about .title {
+.content #about .title {
     color: white;
     font-size: 2rem;
     font-weight: bold;
 }
-.content .about .description {
+.content #about .description {
     color: white;
     font-size: 1.5rem;
     font-family: 'Courier New', Courier, monospace;

@@ -143,35 +143,35 @@ const Skills = () => {
             <label className="title">My skills</label>
             <label className="subtitle">Languages</label>
             <div className="skillsList">
-                {skillsLanguages.map(skill => <div className="skillItem">
+                {skillsLanguages.map(skill => <div key={skill.language} className="skillItem">
                     <i className={skill.icon} />
                     <label className="skillLanguage">{skill.language}</label>
                 </div>)}
             </div>
             <label className="subtitle">Data bases</label>
             <div className="skillsList">
-                {skillsDatabases.map(skill => <div className="skillItem">
+                {skillsDatabases.map(skill => <div key={skill.language} className="skillItem">
                     <i className={skill.icon} />
                     <label className="skillLanguage">{skill.language}</label>
                 </div>)}
             </div>
             <label className="subtitle">Frameworks</label>
             <div className="skillsList">
-                {skillsFrameworks.map(skill => <div className="skillItem">
+                {skillsFrameworks.map(skill => <div key={skill.language} className="skillItem">
                     <i className={skill.icon} />
                     <label className="skillLanguage">{skill.language}</label>
                 </div>)}
             </div>
             <label className="subtitle">Others</label>
             <div className="skillsList">
-                {skillsOthers.map(skill => <div className="skillItem">
+                {skillsOthers.map(skill => <div key={skill.language} className="skillItem">
                     <i className={skill.icon} />
                     <label className="skillLanguage">{skill.language}</label>
                 </div>)}
             </div>
             <label className="subtitle">Interesting</label>
             <div className="skillsList">
-                {interesting.map(item => <div className="skillItem">
+                {interesting.map(item => <div key={item.language} className="skillItem">
                     <i className={item.icon} />
                     <label className="skillLanguage">{item.language}</label>
                 </div>)}

@@ -4,6 +4,7 @@ import "./index.css"
 
 import { Navbar } from "./templates/Navbar"
 import { Skills } from "./templates/Skills"
+import { Works } from "./templates/Works"
 import { Footer } from "./templates/Footer"
 
 import profile from "./assets/images/profile.jpg"
@@ -26,11 +27,11 @@ const App = () => {
                 <div className="description">
                     <label className="hi">Hello!</label>
                     <label className="myName">I'm <b>SYSMA</b> a software development</label>
-                    <label className="interested">Very interested in blockchain technology</label>
+                    <label className="interested">Very interested in blockchain technology and game development</label>
                 </div>
                 <img className="profile" src={profile} alt="profile" />
             </header>
-            <div className="about">
+            <div id="about">
                 <div className="aboutContent">
                     <label className="title">About me</label>
                     <label className="description">
@@ -49,6 +50,7 @@ const App = () => {
                 </div>
             </div>
             <Skills />
+            <Works />
         </div>
         <a id="up" href="#">
             <FontAwesomeIcon icon={faArrowUp} />
