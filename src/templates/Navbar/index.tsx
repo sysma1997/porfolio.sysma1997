@@ -1,5 +1,5 @@
 import * as React from "react"
-import "./Navbar.css"
+import "./index.css"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {

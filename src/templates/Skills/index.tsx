@@ -1,6 +1,6 @@
 import * as React from "react"
-import { useState } from "react"
-import "./Skills.css"
+const { useState } = React
+import "./index.css"
 
 const Skills = () => {
     const [skillsLanguages, _sl] = useState([

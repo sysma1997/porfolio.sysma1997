@@ -1,9 +1,9 @@
 import * as React from "react"
-import { useState } from "react"
+const { useState } = React
 
-import "./Works.css"
+import "./index.css"
 
-import fixmathIcon from "../assets/images/projects/fixmath.jpg"
+import fixmathIcon from "../../assets/images/projects/fixmath.jpg"
 
 const Works = () => {
     const [works, _] = useState([
@@ -38,8 +38,11 @@ const Works = () => {
                         <div className="tags">
                             {work.tags.map(tag => <span className="tag">{tag}</span>)}
                         </div>
-                        <a className="link" href={work.link.href} target="_blank">{work.link.type}</a>
+                        <a className="link" href={work.link.href} target="_blank">
+                            {work.link.type}
+                        </a>
                     </div>
+                    <div className="contentDivition" />
                     <div className="contentImage">
                         <img className="image" src={work.image} alt={work.name} />
                     </div>

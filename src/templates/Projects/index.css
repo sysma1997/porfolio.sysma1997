@@ -1,0 +1,58 @@
+#projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem
+}
+
+#projects .projectsContent {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+#projects .projectsContent .title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#projects .projectsContent .projectsList {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#projects .projectsContent .projectsList .project {
+    border: 1px solid #444;
+    border-radius: 1rem;
+    box-shadow: 0 0.3rem 1rem darkgray;
+
+    display: flex;
+    margin: 0.5rem 0.5rem;
+    width: 30%;
+    height: 300px;
+}
+#projects .projectsContent .projectsList .project .content {
+    display: flex;
+    flex-direction: column;
+    margin: 0.3rem;
+    flex: 1;
+}
+#projects .projectsContent .projectsList .project .content .title {
+    text-align: start;
+    flex: 1;
+}
+#projects .projectsContent .projectsList .project .content .description {
+    flex: 3;
+}
+#projects .projectsContent .projectsList .project .content .tags {
+    flex: 1;
+}
+#projects .projectsContent .projectsList .project .content .tags .tag {
+    background-color: #444;
+    border-radius: 1rem;
+    color: white;
+}

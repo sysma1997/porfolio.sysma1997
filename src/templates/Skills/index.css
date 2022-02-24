@@ -32,6 +32,7 @@
 #skills .skillsContent .skillsList .skillItem {
     background-color: #444;
     border-radius: 10%;
+    box-shadow: 0 0.3rem 1rem darkgray;
 
     display: flex;
     flex-direction: column;

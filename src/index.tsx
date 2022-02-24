@@ -3,8 +3,10 @@ import * as ReactDOM from "react-dom"
 import "./index.css"
 
 import { Navbar } from "./templates/Navbar"
+import { About } from "./templates/About"
 import { Skills } from "./templates/Skills"
 import { Works } from "./templates/Works"
+import { Projects } from "./templates/Projects"
 import { Footer } from "./templates/Footer"
 
 import profile from "./assets/images/profile.jpg"
@@ -31,26 +33,10 @@ const App = () => {
                 </div>
                 <img className="profile" src={profile} alt="profile" />
             </header>
-            <div id="about">
-                <div className="aboutContent">
-                    <label className="title">About me</label>
-                    <label className="description">
-                        Hi! My name is Sebastian Moreno Acero, I'm from Colombia and I work as a software developer.
-                    </label>
-                    <label className="description">
-                        I have 5 years experence, I which I have developed skills mostly in web api in .Net Core and Node js, building static web pages and apps moviles.
-                    </label>
-                    <br />
-                    <label className="description">
-                        I'm currently very interested in blockchain technology and cryptocurrencies and how they can positively change our lives.
-                    </label>
-                    <label className="description">
-                        Another of my interests is the development of video games.
-                    </label>
-                </div>
-            </div>
+            <About />
             <Skills />
             <Works />
+            <Projects />
         </div>
         <a id="up" href="#">
             <FontAwesomeIcon icon={faArrowUp} />
