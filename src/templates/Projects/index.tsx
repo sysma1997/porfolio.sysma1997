@@ -57,6 +57,7 @@ const Projects = () => {
                         </div>
                         <a className="link" href={project.github} target="_blank">
                             <i className="devicon-github-original" />
+                            {' '}
                             GitHub
                         </a>
                     </div>

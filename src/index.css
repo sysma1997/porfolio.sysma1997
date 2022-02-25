@@ -3,7 +3,14 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem; 
+
+    overflow: scroll;
+    overflow-x: hidden;
 }
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+} 
 
 .content {
     padding: 1rem;
