@@ -7,11 +7,13 @@ import { About } from "./templates/About"
 import { Skills } from "./templates/Skills"
 import { Works } from "./templates/Works"
 import { Projects } from "./templates/Projects"
+import { Contact } from "./templates/Contact"
 import { Footer } from "./templates/Footer"
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
+
 import profile from "./assets/images/profile.jpg"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowUp } from "@fortawesome/free-solid-svg-icons"
 
 /*
 IDEAS: https://github.com/emmabostian/developer-portfolios
@@ -37,6 +39,7 @@ const App = () => {
             <Skills />
             <Works />
             <Projects />
+            <Contact />
         </div>
         <a id="up" href="#">
             <FontAwesomeIcon icon={faArrowUp} />

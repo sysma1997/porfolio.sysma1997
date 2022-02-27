@@ -1,0 +1,31 @@
+#contact {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+#contact .title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#contact .contactList {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact .contactList .contactItem {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    margin: 0 1rem;
+    padding: 1rem;
+}
+
+#contact .contactList .contactItem .contactItemIcon {
+    font-size: 3rem;
+}
