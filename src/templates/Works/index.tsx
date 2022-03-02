@@ -36,7 +36,7 @@ const Works = () => {
                         <label className="title">{work.name}</label>
                         <label className="description">{work.description}</label>
                         <div className="tags">
-                            {work.tags.map(tag => <span className="tag">{tag}</span>)}
+                            {work.tags.map(tag => <span key={tag} className="tag">{tag}</span>)}
                         </div>
                         <a className="link" href={work.link.href} target="_blank">
                             {work.link.type}

@@ -2,7 +2,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5rem; 
+    scroll-padding-top: 5rem;
 
     overflow: scroll;
     overflow-x: hidden;
@@ -60,4 +60,34 @@ html {
     position: fixed;
     right: 0;
     bottom: 0;
+}
+
+@media screen and 
+(max-width: 1024px) {
+    .content header {
+        flex-direction: column-reverse;
+        height: auto;
+        padding: 0;
+        margin: 1rem;
+    }
+
+    .content header .description .hi {
+        font-size: 2rem;
+
+        margin-top: 1rem;
+    }
+    .content header .description .myName {
+        font-size: 1.5rem;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .content header .description .interested {
+        font-size: 1.1rem;
+        font-family: sans-serif;
+    }
+
+    #up {
+        width: 4rem;
+        height: 4rem;
+        margin: 1rem;
+    }
 }

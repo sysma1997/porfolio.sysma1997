@@ -53,7 +53,7 @@ const Projects = () => {
                         <label className="title">{project.name}</label>
                         <label className="description">{project.description}</label>
                         <div className="tags">
-                            {project.tags.map(tag => <span className="tag">{tag}</span>)}
+                            {project.tags.map(tag => <span key={tag} className="tag">{tag}</span>)}
                         </div>
                         <a className="link" href={project.github} target="_blank">
                             <i className="devicon-github-original" />

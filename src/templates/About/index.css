@@ -22,3 +22,11 @@
     font-size: 1.5rem;
     font-family: 'Courier New', Courier, monospace;
 }
+
+@media screen and 
+(max-width: 1024px) {
+    #about .aboutContent {
+        width: 90%;
+        margin-top: 2rem;
+    }
+}

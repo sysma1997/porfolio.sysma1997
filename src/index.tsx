@@ -15,12 +15,6 @@ import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 
 import profile from "./assets/images/profile.jpg"
 
-/*
-IDEAS: https://github.com/emmabostian/developer-portfolios
-   #1: https://abdulrahman.id/
-   #2: https://s8sachin.github.io/
-*/
-
 document.title = "SYSMA"
 
 const App = () => {
