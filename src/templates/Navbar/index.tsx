@@ -16,10 +16,6 @@ import {
 const Navbar = () => {
     const [showItems, setShowItems] = useState(false)
 
-    useEffect(() => {
-        //
-    }, [])
-
     const _setShowItems = () => setShowItems(!showItems)
 
     const clickResponse = () => {
@@ -34,6 +30,14 @@ const Navbar = () => {
             items.style.display = "flex"
         }
     }
+    const clickItem = () => {
+        if (screen.width > 1024) return;
+
+        const items = document.getElementById("items")
+
+        _setShowItems()
+        items.style.display = "none"
+    }
 
     return <nav id="navbar">
         <div className="navbarTitle">
@@ -43,23 +47,28 @@ const Navbar = () => {
             </button>
         </div>
         <div id="items" className="navbarItems">
-            <a className="navbarItem" href="#about">
+            <a className="navbarItem" href="#about"
+                onClick={clickItem}>
                 <FontAwesomeIcon className="navbarItemIcon" icon={faUser} />
                 About
             </a>
-            <a className="navbarItem" href="#skills">
+            <a className="navbarItem" href="#skills"
+                onClick={clickItem}>
                 <FontAwesomeIcon className="navbarItemIcon" icon={faStar} />
                 Skills
             </a>
-            <a className="navbarItem" href="#works">
+            <a className="navbarItem" href="#works"
+                onClick={clickItem}>
                 <FontAwesomeIcon className="navbarItemIcon" icon={faBriefcase} />
                 Works
             </a>
-            <a className="navbarItem" href="#projects">
+            <a className="navbarItem" href="#projects"
+                onClick={clickItem}>
                 <FontAwesomeIcon className="navbarItemIcon" icon={faCubes} />
                 Projects
             </a>
-            <a className="navbarItem" href="#contact">
+            <a className="navbarItem" href="#contact"
+                onClick={clickItem}>
                 <FontAwesomeIcon className="navbarItemIcon" icon={faInbox} />
                 Contact
             </a>
