@@ -59,3 +59,17 @@
     border-radius: 1rem;
     color: white;
 }
+
+@media screen and 
+(max-width: 1024px) {
+    #projects .projectsContent {
+        width: 90%;
+    }
+    #projects .projectsContent .projectsList {
+        flex-direction: column;
+    }
+    #projects .projectsContent .projectsList .project {
+        width: auto;
+        height: auto;
+    }
+}
