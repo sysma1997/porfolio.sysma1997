@@ -10,7 +10,7 @@ const About = () => {
                 Hi! My name is Sebastian Moreno Acero, I'm from Colombia and I work as a software developer.
             </label>
             <label className="description">
-                I have 5 years experence, I which I have developed skills mostly in web api in .Net Core and Node js, building static web pages and apps moviles.
+                I have 4 years experience, I which I have developed skills mostly in Web API in .Net Core and Node js, building static web pages and mobile apps.
             </label>
             <br />
             <label className="description">
