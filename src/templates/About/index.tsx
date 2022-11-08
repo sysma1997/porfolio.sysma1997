@@ -14,10 +14,7 @@ const About = () => {
             </label>
             <br />
             <label className="description">
-                I'm currently very interested in blockchain technology and cryptocurrencies and how they can positively change our lives.
-            </label>
-            <label className="description">
-                Another of my interests is the development of video games.
+                I'm currently very interested in development of video games and blockchain technology.
             </label>
         </div>
     </div>

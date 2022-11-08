@@ -25,22 +25,24 @@
 }
 
 #skills .skillsContent .skillsList {
-    display: flex;
-    flex-flow: row wrap;
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    gap: 1rem;
 }
 
 #skills .skillsContent .skillsList .skillItem {
     background-color: #444;
     border-radius: 10%;
     box-shadow: 0 0.3rem 1rem darkgray;
+    padding: 1rem;
+    margin: 1rem;
+    height: 7rem;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
-    margin: 1rem;
-    width: 8rem;
 }
 #skills .skillsContent .skillsList .skillItem .skillIcon {
     color: white;
@@ -57,7 +59,11 @@
     #skills .skillsContent {
         width: 100%;
     }
+
+    #skills .skillsContent .subtitle {
+        margin: 0.5rem 1rem;
+    }
     #skills .skillsContent .skillsList {
-        justify-content: center;
+        gap: 0;
     }
 }

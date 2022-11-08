@@ -3,138 +3,142 @@ const { useState } = React
 import "./index.css"
 
 const Skills = () => {
-    const [skillsLanguages, _sl] = useState([
+    const [skillsLanguages] = useState([
         {
-            language: "Javascript",
-            icon: "skillIcon devicon-javascript-plain"
+            icon: "skillIcon devicon-javascript-plain",
+            text: "Javascript"
         },
         {
-            language: "Typescript",
-            icon: "skillIcon devicon-typescript-plain"
+            icon: "skillIcon devicon-typescript-plain",
+            text: "Typescript"
         },
         {
-            language: "C#",
-            icon: "skillIcon devicon-csharp-plain"
+            icon: "skillIcon devicon-godot-plain",
+            text: "GDScript"
         },
         {
-            language: "Php",
-            icon: "skillIcon devicon-php-plain"
+            icon: "skillIcon devicon-csharp-plain",
+            text: "C#"
         },
         {
-            language: "Java",
-            icon: "skillIcon devicon-java-plain"
+            icon: "skillIcon devicon-php-plain",
+            text: "Php"
         },
         {
-            language: "Kotlin",
-            icon: "skillIcon devicon-kotlin-plain"
+            icon: "skillIcon devicon-java-plain",
+            text: "Java"
+        },
+        {
+            icon: "skillIcon devicon-kotlin-plain",
+            text: "Kotlin"
         }
     ])
-    const [skillsDatabases, _sdb] = useState([
+    const [skillsDatabases] = useState([
         {
-            language: "MySQL",
-            icon: "skillIcon devicon-mysql-plain"
+            icon: "skillIcon devicon-postgresql-plain",
+            text: "Postgres SQL"
         },
         {
-            language: "Postgres SQL",
-            icon: "skillIcon devicon-postgresql-plain"
+            icon: "skillIcon devicon-sqlite-plain", 
+            text: "SQLite"
         },
         {
-            language: "Microsoft SQL Server",
-            icon: "skillIcon devicon-microsoftsqlserver-plain"
+            icon: "skillIcon devicon-mysql-plain",
+            text: "MySQL"
+        },
+        {
+            icon: "skillIcon devicon-microsoftsqlserver-plain",
+            text: "Microsoft SQL Server"
         }
     ])
-    const [skillsFrameworks, _sf] = useState([
+    const [skillsFrameworks] = useState([
         {
-            language: "Node JS",
-            icon: "skillIcon devicon-nodejs-plain"
+            icon: "skillIcon devicon-nodejs-plain",
+            text: "Node JS"
         },
         {
-            language: "Webpack",
-            icon: "skillIcon devicon-webpack-plain"
+            icon: "skillIcon devicon-webpack-plain",
+            text: "Webpack"
         },
         {
-            language: "React",
-            icon: "skillIcon devicon-react-plain"
+            icon: "skillIcon devicon-react-plain",
+            text: "React"
         },
         {
-            language: "Express JS",
-            icon: "skillIcon devicon-express-original"
+            icon: "skillIcon devicon-express-original",
+            text: "Express JS"
         },
         {
-            language: "Jest",
-            icon: "skillIcon devicon-jest-plain"
+            icon: "skillIcon devicon-jest-plain",
+            text: "Jest"
         },
         {
-            language: "Composer",
-            icon: "skillIcon devicon-composer-plain"
-        },
+            icon: "skillIcon devicon-dotnetcore-plain",
+            text: ".Net Core"
+        }, 
         {
-            language: ".Net Core",
-            icon: "skillIcon devicon-dotnetcore-plain"
-        },
-        {
-            language: "Firebase",
-            icon: "skillIcon devicon-firebase-plain"
+            icon: "skillIcon devicon-denojs-original",
+            text: "Deno js"
         }
     ])
-    const [skillsOthers, _so] = useState([
+    const [skillsOthers] = useState([
         {
-            language: "Docker",
-            icon: "skillIcon devicon-docker-plain"
+            icon: "skillIcon devicon-godot-plain",
+            text: "Godot"
         },
         {
-            language: "Android",
-            icon: "skillIcon devicon-android-plain"
+            icon: "skillIcon devicon-docker-plain",
+            text: "Docker"
         },
         {
-            language: "React Native",
-            icon: "skillIcon devicon-react-plain"
+            icon: "skillIcon devicon-android-plain",
+            text: "Android"
         },
         {
-            language: "Git",
-            icon: "skillIcon devicon-git-plain"
+            icon: "skillIcon devicon-react-plain",
+            text: "React Native"
         },
         {
-            language: "GitHub",
-            icon: "skillIcon devicon-github-plain"
+            icon: "skillIcon devicon-git-plain",
+            text: "Git"
         },
         {
-            language: "GitLab",
-            icon: "skillIcon devicon-gitlab-plain"
+            icon: "skillIcon devicon-bash-plain",
+            text: "Bash"
         },
         {
-            language: "Bash",
-            icon: "skillIcon devicon-bash-plain"
-        },
-        {
-            language: "linux",
-            icon: "skillIcon devicon-linux-plain"
+            icon: "skillIcon devicon-linux-plain",
+            text: "linux"
         },
     ])
-    const [interesting, _in] = useState([
+    const [interesting] = useState([
         {
-            language: "C++",
-            icon: "skillIcon devicon-cplusplus-plain"
+            icon: "skillIcon devicon-cplusplus-plain",
+            text: "C++"
         },
         {
-            language: "Godot",
-            icon: "skillIcon devicon-godot-plain"
+            icon: "skillIcon devicon-cmake-plain",
+            text: "CMake"
         },
         {
-            language: "Haskell",
-            icon: "skillIcon devicon-haskell-plain"
+            icon: "skillIcon devicon-opengl-plain",
+            text: "OpenGL"
         },
         {
-            language: "OpenGL",
-            icon: "skillIcon devicon-opengl-plain"
+            icon: "skillIcon",
+            text: "ImGUI"
         },
         {
-            language: "electron",
-            icon: "skillIcon devicon-electron-original"
+            icon: "skillIcon devicon-solidity-plain",
+            text: "Solidity"
         },
         {
-            language: "Heroku",
-            icon: "skillIcon devicon-heroku-original"
+            icon: "skillIcon devicon-electron-original",
+            text: "electron"
+        }, 
+        {
+            icon: "skillIcon devicon-rust-plain", 
+            text: "Rust"
         }
     ])
 
@@ -143,37 +147,37 @@ const Skills = () => {
             <label className="title">My skills</label>
             <label className="subtitle">Languages</label>
             <div className="skillsList">
-                {skillsLanguages.map(skill => <div key={skill.language} className="skillItem">
+                {skillsLanguages.map((skill, index) => <div key={index.toString()} className="skillItem">
                     <i className={skill.icon} />
-                    <label className="skillLanguage">{skill.language}</label>
+                    <label className="skillLanguage">{skill.text}</label>
                 </div>)}
             </div>
             <label className="subtitle">Data bases</label>
             <div className="skillsList">
-                {skillsDatabases.map(skill => <div key={skill.language} className="skillItem">
+                {skillsDatabases.map((skill, index) => <div key={index.toString()} className="skillItem">
                     <i className={skill.icon} />
-                    <label className="skillLanguage">{skill.language}</label>
+                    <label className="skillLanguage">{skill.text}</label>
                 </div>)}
             </div>
             <label className="subtitle">Frameworks</label>
             <div className="skillsList">
-                {skillsFrameworks.map(skill => <div key={skill.language} className="skillItem">
+                {skillsFrameworks.map((skill, index) => <div key={index.toString()} className="skillItem">
                     <i className={skill.icon} />
-                    <label className="skillLanguage">{skill.language}</label>
+                    <label className="skillLanguage">{skill.text}</label>
                 </div>)}
             </div>
             <label className="subtitle">Others</label>
             <div className="skillsList">
-                {skillsOthers.map(skill => <div key={skill.language} className="skillItem">
+                {skillsOthers.map((skill, index) => <div key={index.toString()} className="skillItem">
                     <i className={skill.icon} />
-                    <label className="skillLanguage">{skill.language}</label>
+                    <label className="skillLanguage">{skill.text}</label>
                 </div>)}
             </div>
             <label className="subtitle">Interesting</label>
             <div className="skillsList">
-                {interesting.map(item => <div key={item.language} className="skillItem">
+                {interesting.map((item, index) => <div key={index.toString()} className="skillItem">
                     <i className={item.icon} />
-                    <label className="skillLanguage">{item.language}</label>
+                    <label className="skillLanguage">{item.text}</label>
                 </div>)}
             </div>
         </div>

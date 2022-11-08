@@ -25,7 +25,7 @@ const App = () => {
                 <div className="description">
                     <label className="hi">Hello!</label>
                     <label className="myName">I'm <b>SYSMA</b> a software development</label>
-                    <label className="interested">Very interested in blockchain technology and game development</label>
+                    <label className="interested">Very interested in game development and blockchain technology.</label>
                 </div>
                 <img className="profile" src={profile} alt="profile" />
             </header>

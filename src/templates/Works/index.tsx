@@ -10,20 +10,20 @@ const Works = () => {
         {
             name: "FixMath",
             image: fixmathIcon,
-            description: "Personal project for improve the way of organizing personal finances, is currently in development, but I plan add more functions and filters, also to track all cryptocurrencies.",
+            description: "It is an application that seeks to improve the way of organizing personal finances, in order to keep track of the budget. Registering daily the management of your income and thus optimize your savings and spending habits.",
             tags: [
-                "React Native",
-                "Android",
-                "Redux",
-                "SQLite",
+                "Deno js",
+                "Postgres SQL",
+                "React js",
                 "Finances",
-                "Currencies",
-                "Cryptocurrencies"
+                "Currencies"
             ],
-            link: {
-                type: "Play Store",
-                href: "https://play.google.com/store/apps/details?id=com.sysma&hl=es_CO&gl=US"
-            }
+            links: [
+                {
+                    type: "Page", 
+                    href: "https://fixmath.deno.dev/"
+                }
+            ]
         }
     ])
 
@@ -33,16 +33,21 @@ const Works = () => {
             <div className="worksList">
                 {works.map(work => <div key={work.name} className="work">
                     <div className="content">
-                        <label className="title">{work.name}</label>
-                        <label className="description">{work.description}</label>
-                        <div className="tags">
-                            {work.tags.map(tag => <span key={tag} className="tag">{tag}</span>)}
+                        <div className="information">
+                            <label className="title">{work.name}</label>
+                            <label className="description">{work.description}</label>
                         </div>
-                        <a className="link" href={work.link.href} target="_blank">
-                            {work.link.type}
-                        </a>
+                        <div className="tags">
+                            {work.tags.map((tag, index) => <span key={index.toString()} className="tag">{tag}</span>)}
+                        </div>
+                        {work.links.map(link => <a 
+                            key={link.type}
+                            className="link"
+                            href={link.href}
+                            target="_blank">
+                            {link.type}
+                        </a>)}
                     </div>
-                    <div className="contentDivition" />
                     <div className="contentImage">
                         <img className="image" src={work.image} alt={work.name} />
                     </div>

@@ -7,21 +7,26 @@ html {
     overflow: scroll;
     overflow-x: hidden;
 }
+body {
+    padding: 0;
+    margin: 0;
+}
 ::-webkit-scrollbar {
     width: 0;
     background: transparent;
 } 
 
-.content {
+/* .content {
     padding: 1rem;
-}
+} */
 .content header {
+    padding: 0 5rem;
+    margin: 5rem 0;
+    
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 80vh;
-    padding: 0 5rem;
 }
 .content header .profile {
     border-radius: 50%;
