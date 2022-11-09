@@ -19,45 +19,81 @@
 }
 
 #projects .projectsContent .projectsList {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+    gap: 1rem;
 }
 #projects .projectsContent .projectsList .project {
     border: 1px solid #444;
     border-radius: 1rem;
     box-shadow: 0 0.3rem 1rem darkgray;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 
     display: flex;
-    margin: 0.5rem 0.5rem;
-    width: 30%;
-    height: 300px;
-
-    overflow: scroll;
-    overflow-x: hidden;
 }
 #projects .projectsContent .projectsList .project .content {
     display: flex;
     flex-direction: column;
-    margin: 0.3rem;
+    justify-content: center;
+    align-items: center;
+
+    gap: 0.5rem;
+}
+#projects .projectsContent .projectsList .project .content .information {
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+
     flex: 1;
 }
-#projects .projectsContent .projectsList .project .content .title {
-    font-size: 1.5rem;
-    text-align: start;
-    flex: 1;
+#projects .projectsContent .projectsList .project .content .information label {
+    text-align: center;
+    margin: 0;
 }
-#projects .projectsContent .projectsList .project .content .description {
-    flex: 3;
+#projects .projectsContent .projectsList .project .content .information .title {
+    font-size: 1.2rem;
 }
 #projects .projectsContent .projectsList .project .content .tags {
-    margin-top: 1rem;
-    flex: 1;
+    width: 100%;
+    height: 3rem;
+    padding: 1rem;
+    margin: 0;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: scroll;
+    white-space: nowrap;
+    gap: 0.3rem;
+
+    /* HIDDE SCROLL FIREFOX, EDGE */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+#projects .projectsContent .projectsList .project .content .tags::-webkit-scrollbar {
+    display: none;
 }
 #projects .projectsContent .projectsList .project .content .tags .tag {
     background-color: #444;
     border-radius: 1rem;
     color: white;
+    padding: 1rem;
+}
+#projects .projectsContent .projectsList .project .content .links {
+    margin-bottom: 0.5rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 @media screen and 

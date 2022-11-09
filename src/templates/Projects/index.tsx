@@ -1,6 +1,9 @@
 import * as React from "react"
 const { useState } = React
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faGithub, faItchIo } from "@fortawesome/free-brands-svg-icons"
+
 import "./index.css"
 
 const Projects = () => {
@@ -15,7 +18,13 @@ const Projects = () => {
                 "React",
                 "Typescript"
             ],
-            github: "https://github.com/sysma1997/template-webpack-react-multiple-page"
+            links: [
+                {
+                    icon: faGithub, 
+                    text: "Github", 
+                    href: "https://github.com/sysma1997/template-webpack-react-multiple-page"
+                }
+            ]
         },
         {
             name: "Webpack react multiple page with Backend",
@@ -28,7 +37,13 @@ const Projects = () => {
                 "React",
                 "MySQL"
             ],
-            github: "https://github.com/sysma1997/webpack-react-multiple-pages"
+            links: [
+                {
+                    icon: faGithub, 
+                    text: "Github", 
+                    href: "https://github.com/sysma1997/webpack-react-multiple-pages"
+                }
+            ]
         },
         {
             name: "Social network example",
@@ -40,7 +55,53 @@ const Projects = () => {
                 "ExpressJS",
                 "NextJS"
             ],
-            github: "https://github.com/sysma1997/social_network_example"
+            links: [
+                {
+                    icon: faGithub, 
+                    text: "Github", 
+                    href: "https://github.com/sysma1997/social_network_example"
+                }
+            ]
+        }, 
+        {
+            name: "Pong", 
+            description: "Pong is a table tennis–themed twitch arcade sports video game, featuring simple two-dimensional graphics, manufactured by Atari and originally released in 1972.",
+            tags: [
+                "GDScript", 
+                "Godot engine"
+            ], 
+            links: [
+                {
+                    icon: faGithub, 
+                    text: "Github", 
+                    href: "https://github.com/sysma1997/Pong"
+                },
+                {
+                    icon: faItchIo, 
+                    text: "Itch.io", 
+                    href: "https://sysma51.itch.io/pong"
+                }
+            ]
+        }, 
+        {
+            name: "PacMan", 
+            description: "PacMan is an arcade video game created by video game designer Toru Iwatani of the Namco company, and distributed by Midway Games to the American market in the early 1980s.", 
+            tags: [
+                "GDScript", 
+                "Godot engine"
+            ], 
+            links: [
+                {
+                    icon: faGithub, 
+                    text: "Github", 
+                    href: "https://github.com/sysma1997/PacMan"
+                },
+                {
+                    icon: faItchIo, 
+                    text: "Itch.io", 
+                    href: "https://sysma51.itch.io/pacman"
+                }
+            ]
         }
     ])
 
@@ -50,16 +111,21 @@ const Projects = () => {
             <div className="projectsList">
                 {projects.map(project => <div key={project.name} className="project">
                     <div className="content">
-                        <label className="title">{project.name}</label>
-                        <label className="description">{project.description}</label>
+                        <div className="information">
+                            <label className="title">{project.name}</label>
+                            <label className="description">{project.description}</label>
+                        </div>
                         <div className="tags">
                             {project.tags.map(tag => <span key={tag} className="tag">{tag}</span>)}
                         </div>
-                        <a className="link" href={project.github} target="_blank">
-                            <i className="devicon-github-original" />
-                            {' '}
-                            GitHub
-                        </a>
+                        {project.links && <div className="links">
+                            {project.links.map(link => 
+                                <a className="link" href={link.href} target="_blank">
+                                    <FontAwesomeIcon icon={link.icon} />
+                                    {' '}
+                                    {link.text}
+                                </a>)}
+                        </div>}
                     </div>
                 </div>)}
             </div>
