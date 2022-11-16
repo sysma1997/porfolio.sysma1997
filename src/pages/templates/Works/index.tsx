@@ -3,7 +3,7 @@ const { useState } = React
 
 import "./index.css"
 
-import fixmathIcon from "../../assets/images/projects/fixmath.jpg"
+import fixmathIcon from "../../../assets/images/projects/fixmath.jpg"
 
 const Works = () => {
     const [works, _] = useState([

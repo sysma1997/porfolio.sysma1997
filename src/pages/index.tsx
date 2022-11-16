@@ -1,6 +1,7 @@
-import * as React from "react"
-import * as ReactDOM from "react-dom"
-import "./index.css"
+import React from "react"
+import ReactDOM from "react-dom"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 
 import { Navbar } from "./templates/Navbar"
 import { About } from "./templates/About"
@@ -10,10 +11,9 @@ import { Projects } from "./templates/Projects"
 import { Contact } from "./templates/Contact"
 import { Footer } from "./templates/Footer"
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
+import profile from "../assets/images/profile.jpg"
 
-import profile from "./assets/images/profile.jpg"
+import "./index.scss"
 
 document.title = "SYSMA"
 
