@@ -1,3 +1,6 @@
+@import "../../shared/global.scss";
+@import "../../shared/tags.scss";
+
 #projects {
     margin-top: 2rem;
 
@@ -18,107 +21,72 @@
             font-weight: bold;
             margin-bottom: 0.5rem;
         }
-    }
-}
 
-#projects .projectsContent .projectsList {
-    display: grid;
-    grid-auto-flow: dense;
-    grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
-    gap: 1rem;
-}
+        .projectsList {
+            display: grid;
+            grid-auto-flow: dense;
+            grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+            gap: 1rem;
 
-#projects .projectsContent .projectsList .project {
-    border: 1px solid #444;
-    border-radius: 1rem;
-    box-shadow: 0 0.3rem 1rem darkgray;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+            .project {
+                border: 1px solid #444;
+                border-radius: 1rem;
+                box-shadow: 0 0.3rem 1rem darkgray;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            
+                display: flex;
 
-    display: flex;
-}
+                .content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                
+                    gap: 0.5rem;
 
-#projects .projectsContent .projectsList .project .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+                    .information {
+                        padding: 1rem;
+                    
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 0.3rem;
+                    
+                        flex: 1;
 
-    gap: 0.5rem;
-}
+                        label {
+                            text-align: center;
+                            margin: 0;
+                        }
 
-#projects .projectsContent .projectsList .project .content .information {
-    padding: 1rem;
+                        .title {
+                            font-size: 1.2rem;
+                        }
+                    }
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.3rem;
+                    .links {
+                        margin-bottom: 0.5rem;
+                    
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+                }
 
-    flex: 1;
-}
+                @media screen and (max-width: 1024px) {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
 
-#projects .projectsContent .projectsList .project .content .information label {
-    text-align: center;
-    margin: 0;
-}
-
-#projects .projectsContent .projectsList .project .content .information .title {
-    font-size: 1.2rem;
-}
-
-#projects .projectsContent .projectsList .project .content .tags {
-    width: 100%;
-    height: 3rem;
-    padding: 1rem;
-    margin: 0;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: scroll;
-    white-space: nowrap;
-    gap: 0.3rem;
-
-    /* HIDDE SCROLL FIREFOX, EDGE */
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-#projects .projectsContent .projectsList .project .content .tags::-webkit-scrollbar {
-    display: none;
-}
-
-#projects .projectsContent .projectsList .project .content .tags .tag {
-    background-color: #444;
-    border-radius: 1rem;
-    color: white;
-    padding: 1rem;
-}
-
-#projects .projectsContent .projectsList .project .content .links {
-    margin-bottom: 0.5rem;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-@media screen and (max-width: 1024px) {
-    #projects .projectsContent {
-        width: 90%;
-    }
-
-    #projects .projectsContent .projectsList {
-        flex-direction: column;
-    }
-
-    #projects .projectsContent .projectsList .project {
-        width: 100%;
-        height: auto;
+        @media screen and (max-width: 1024px) {
+            width: 90%;
+        }
     }
 }
