@@ -13,7 +13,7 @@
     .contactList {
         display: grid;
         grid-auto-flow: dense;
-        grid-template-columns: repeat(auto-fill, minmax(21rem, 1fr));
+        grid-template-columns: 1fr 1fr 1fr;
         gap: 1rem;
 
         .contactItem {
@@ -27,10 +27,6 @@
             .contactItemIcon {
                 font-size: 3rem;
             }
-        }
-
-        @media screen and (max-width: 1024px) {
-            grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
         }
     }
 }
