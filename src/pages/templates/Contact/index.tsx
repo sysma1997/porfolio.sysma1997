@@ -1,11 +1,9 @@
-import * as React from "react"
-const { useState } = React
-
-import "./index.css"
-
+import React, { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
+
+import "./index.scss"
 
 const Contact = () => {
     const [contcats, _] = useState([

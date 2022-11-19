@@ -1,7 +1,14 @@
+@import "../../shared/global.scss";
+
 footer {
     background-color: whitesmoke;
+    padding: 0.5rem;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+
+    p {
+        color: $linkColorHover;
+    }
 }

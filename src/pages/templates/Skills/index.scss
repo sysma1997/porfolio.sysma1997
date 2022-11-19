@@ -1,0 +1,73 @@
+@import "../../shared/global.scss";
+
+#skills {
+    margin-top: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .skillsContent {
+        width: 80%;
+
+        display: flex;
+        flex-direction: column;
+
+        .title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            font-size: 1.7rem;
+            font-weight: bold;
+            margin-top: 1rem;
+
+            @media screen and (max-width: 1024px) {
+                margin: 0.5rem 1rem;
+            }
+        }
+
+        .skillsList {
+            display: grid;
+            grid-auto-flow: dense;
+            grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+            gap: 1rem;
+
+            .skillItem {
+                background-color: $linkColorHover;
+                border-radius: 10%;
+                box-shadow: 0 0.3rem 1rem darkgray;
+                padding: 0.5rem;
+                margin: 1rem;
+                height: 7rem;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .skillIcon {
+                    color: white;
+                    font-size: 2rem;
+                }
+
+                .skillLanguage {
+                    color: white;
+                    font-size: 1.2rem;
+                    text-align: center;
+                }
+            }
+
+            @media screen and (max-width: 1024px) {
+                gap: 0;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            width: 100%;
+        }
+    }
+}

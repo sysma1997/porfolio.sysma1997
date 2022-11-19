@@ -1,0 +1,128 @@
+@import "../../shared/global.scss";
+
+#works {
+    margin-top: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .worksContent {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+
+        .title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .worksList {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+
+            .work {
+                width: 100%;
+                border: 1px solid #444;
+                border-radius: 1rem;
+                box-shadow: 0 0.3rem 1rem darkgray;
+
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
+                .content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    flex: 1;
+
+                    .information {
+                        color: $linkColorHover;
+                        padding: 1rem;
+
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+
+                        flex: 1;
+
+                        .title {
+                            text-align: start;
+                            margin-bottom: 0.5rem;
+                        }
+                    }
+
+                    .tags {
+                        background-color: #2a7;
+
+                        /* width: 100%; */
+                        /* height: 3rem; */
+                        /* padding: 1rem;
+                        margin: 0; */
+
+                        overflow: scroll;
+                        /* display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        overflow: scroll;
+                        white-space: nowrap;
+                        gap: 0.3rem; */
+
+                        /* HIDDE SCROLL FIREFOX, EDGE */
+                        -ms-overflow-style: none;
+                        scrollbar-width: none;
+
+                        /* HIDDE SCROLL CHROME, SAFARI, OPERA */
+                        ::-webkit-scrollbar {
+                            display: none;
+                        }
+
+                        .tag {
+                            background-color: $linkColorHover;
+                            border-radius: 1rem;
+                            color: white;
+                            padding: 1rem;
+                        }
+                    }
+
+                    .link {
+                        width: 100%;
+
+                        text-align: center;
+                        padding: 1rem;
+                    }
+                }
+
+                .contentImage {
+                    padding: 0.3rem;
+                    flex: 1;
+
+                    .image {
+                        border-radius: 1rem;
+                        object-fit: cover;
+
+                        width: 100%;
+                    }
+                }
+
+                @media screen and (max-width: 1024px) {
+                    flex-direction: column-reverse;
+                }
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            width: 90%;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+#contact {
+    margin-top: 1rem;
+
+    display: flex;
+    flex-direction: column;
+
+    .title {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .contactList {
+        display: grid;
+        grid-auto-flow: dense;
+        grid-template-columns: repeat(auto-fill, minmax(21rem, 1fr));
+        gap: 1rem;
+
+        .contactItem {
+            text-align: center;
+            margin: 0 1rem;
+            padding: 1rem;
+
+            display: flex;
+            flex-direction: column;
+
+            .contactItemIcon {
+                font-size: 3rem;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
+        }
+    }
+}

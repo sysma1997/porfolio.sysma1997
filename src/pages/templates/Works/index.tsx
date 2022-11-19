@@ -1,8 +1,6 @@
-import * as React from "react"
-const { useState } = React
+import React, { useState } from "react"
 
-import "./index.css"
-
+import "./index.scss"
 import fixmathIcon from "../../../assets/images/projects/fixmath.jpg"
 
 const Works = () => {
@@ -20,7 +18,7 @@ const Works = () => {
             ],
             links: [
                 {
-                    type: "Page", 
+                    type: "Page",
                     href: "https://fixmath.deno.dev/"
                 }
             ]
@@ -40,7 +38,7 @@ const Works = () => {
                         <div className="tags">
                             {work.tags.map((tag, index) => <span key={index.toString()} className="tag">{tag}</span>)}
                         </div>
-                        {work.links.map(link => <a 
+                        {work.links.map(link => <a
                             key={link.type}
                             className="link"
                             href={link.href}

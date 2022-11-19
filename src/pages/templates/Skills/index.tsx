@@ -1,6 +1,6 @@
-import * as React from "react"
-const { useState } = React
-import "./index.css"
+import React, { useState } from "react"
+
+import "./index.scss"
 
 const Skills = () => {
     const [skillsLanguages] = useState([
@@ -39,7 +39,7 @@ const Skills = () => {
             text: "Postgres SQL"
         },
         {
-            icon: "skillIcon devicon-sqlite-plain", 
+            icon: "skillIcon devicon-sqlite-plain",
             text: "SQLite"
         },
         {
@@ -75,7 +75,7 @@ const Skills = () => {
         {
             icon: "skillIcon devicon-dotnetcore-plain",
             text: ".Net Core"
-        }, 
+        },
         {
             icon: "skillIcon devicon-denojs-original",
             text: "Deno js"
@@ -135,9 +135,9 @@ const Skills = () => {
         {
             icon: "skillIcon devicon-electron-original",
             text: "electron"
-        }, 
+        },
         {
-            icon: "skillIcon devicon-rust-plain", 
+            icon: "skillIcon devicon-rust-plain",
             text: "Rust"
         }
     ])

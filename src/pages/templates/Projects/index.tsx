@@ -1,10 +1,9 @@
-import * as React from "react"
-const { useState } = React
+import React, { useState } from "react"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub, faItchIo } from "@fortawesome/free-brands-svg-icons"
 
-import "./index.css"
+import "./index.scss"
 
 const Projects = () => {
     const [projects, _] = useState([
@@ -20,8 +19,8 @@ const Projects = () => {
             ],
             links: [
                 {
-                    icon: faGithub, 
-                    text: "Github", 
+                    icon: faGithub,
+                    text: "Github",
                     href: "https://github.com/sysma1997/template-webpack-react-multiple-page"
                 }
             ]
@@ -39,8 +38,8 @@ const Projects = () => {
             ],
             links: [
                 {
-                    icon: faGithub, 
-                    text: "Github", 
+                    icon: faGithub,
+                    text: "Github",
                     href: "https://github.com/sysma1997/webpack-react-multiple-pages"
                 }
             ]
@@ -57,48 +56,48 @@ const Projects = () => {
             ],
             links: [
                 {
-                    icon: faGithub, 
-                    text: "Github", 
+                    icon: faGithub,
+                    text: "Github",
                     href: "https://github.com/sysma1997/social_network_example"
                 }
             ]
-        }, 
+        },
         {
-            name: "Pong", 
+            name: "Pong",
             description: "Pong is a table tennis–themed twitch arcade sports video game, featuring simple two-dimensional graphics, manufactured by Atari and originally released in 1972.",
             tags: [
-                "GDScript", 
+                "GDScript",
                 "Godot engine"
-            ], 
+            ],
             links: [
                 {
-                    icon: faGithub, 
-                    text: "Github", 
+                    icon: faGithub,
+                    text: "Github",
                     href: "https://github.com/sysma1997/Pong"
                 },
                 {
-                    icon: faItchIo, 
-                    text: "Itch.io", 
+                    icon: faItchIo,
+                    text: "Itch.io",
                     href: "https://sysma51.itch.io/pong"
                 }
             ]
-        }, 
+        },
         {
-            name: "PacMan", 
-            description: "PacMan is an arcade video game created by video game designer Toru Iwatani of the Namco company, and distributed by Midway Games to the American market in the early 1980s.", 
+            name: "PacMan",
+            description: "PacMan is an arcade video game created by video game designer Toru Iwatani of the Namco company, and distributed by Midway Games to the American market in the early 1980s.",
             tags: [
-                "GDScript", 
+                "GDScript",
                 "Godot engine"
-            ], 
+            ],
             links: [
                 {
-                    icon: faGithub, 
-                    text: "Github", 
+                    icon: faGithub,
+                    text: "Github",
                     href: "https://github.com/sysma1997/PacMan"
                 },
                 {
-                    icon: faItchIo, 
-                    text: "Itch.io", 
+                    icon: faItchIo,
+                    text: "Itch.io",
                     href: "https://sysma51.itch.io/pacman"
                 }
             ]
@@ -119,7 +118,7 @@ const Projects = () => {
                             {project.tags.map(tag => <span key={tag} className="tag">{tag}</span>)}
                         </div>
                         {project.links && <div className="links">
-                            {project.links.map(link => 
+                            {project.links.map(link =>
                                 <a className="link" href={link.href} target="_blank">
                                     <FontAwesomeIcon icon={link.icon} />
                                     {' '}
