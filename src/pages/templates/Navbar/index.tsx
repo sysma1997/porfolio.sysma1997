@@ -64,11 +64,11 @@ const Navbar = () => {
                     <FontAwesomeIcon className="navbarItemIcon" icon={faStar} />
                     Skills
                 </a>
-                <a className="navbar-item" href="#works"
+                {/* <a className="navbar-item" href="#works"
                     onClick={clickItem}>
                     <FontAwesomeIcon className="navbarItemIcon" icon={faBriefcase} />
                     Works
-                </a>
+                </a> */}
                 <a className="navbar-item" href="#projects"
                     onClick={clickItem}>
                     <FontAwesomeIcon className="navbarItemIcon" icon={faCubes} />
