@@ -15,50 +15,14 @@ const Projects = () => {
                 "Webpack",
                 "Babel",
                 "React",
-                "Typescript"
+                "Typescript", 
+                "Sass"
             ],
             links: [
                 {
                     icon: faGithub,
                     text: "Github",
                     href: "https://github.com/sysma1997/template-webpack-react-multiple-page"
-                }
-            ]
-        },
-        {
-            name: "Webpack react multiple page with Backend",
-            description: "Example the frontend with me template and Backend in apache with php.",
-            tags: [
-                "Docker",
-                "Php",
-                "NodeJS",
-                "Typescript",
-                "React",
-                "MySQL"
-            ],
-            links: [
-                {
-                    icon: faGithub,
-                    text: "Github",
-                    href: "https://github.com/sysma1997/webpack-react-multiple-pages"
-                }
-            ]
-        },
-        {
-            name: "Social network example",
-            description: "Simple building for social network with Node and Express.",
-            tags: [
-                "Docker",
-                "NodeJS",
-                "Typescript",
-                "ExpressJS",
-                "NextJS"
-            ],
-            links: [
-                {
-                    icon: faGithub,
-                    text: "Github",
-                    href: "https://github.com/sysma1997/social_network_example"
                 }
             ]
         },
