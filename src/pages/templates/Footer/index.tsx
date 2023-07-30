@@ -2,11 +2,13 @@ import React from "react"
 
 import "./index.scss"
 
-const Footer = () => {
+const Footer = (props: {
+    language: any
+}) => {
+    const { language } = props
+
     return <footer>
-        <p>
-            Created by <b>SYSMA</b>
-        </p>
+        <p dangerouslySetInnerHTML={{ __html: language.footer }} />
     </footer>
 }
 

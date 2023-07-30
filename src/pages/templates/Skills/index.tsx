@@ -2,7 +2,11 @@ import React, { useState } from "react"
 
 import "./index.scss"
 
-const Skills = () => {
+const Skills = (props: {
+    language: any
+}) => {
+    const { language } = props
+
     const [skillsLanguages] = useState([
         {
             icon: "skillIcon devicon-javascript-plain",
@@ -144,36 +148,36 @@ const Skills = () => {
 
     return <div id="skills">
         <div className="skillsContent">
-            <label className="title">My skills</label>
-            <label className="subtitle">Languages</label>
+            <label className="title">{language.skills.title}</label>
+            <label className="subtitle">{language.skills.language}</label>
             <div className="skillsList">
                 {skillsLanguages.map((skill, index) => <div key={index.toString()} className="skillItem">
                     <i className={skill.icon} />
                     <label className="skillLanguage">{skill.text}</label>
                 </div>)}
             </div>
-            <label className="subtitle">Data bases</label>
+            <label className="subtitle">{language.skills.databases}</label>
             <div className="skillsList">
                 {skillsDatabases.map((skill, index) => <div key={index.toString()} className="skillItem">
                     <i className={skill.icon} />
                     <label className="skillLanguage">{skill.text}</label>
                 </div>)}
             </div>
-            <label className="subtitle">Frameworks</label>
+            <label className="subtitle">{language.skills.frameworks}</label>
             <div className="skillsList">
                 {skillsFrameworks.map((skill, index) => <div key={index.toString()} className="skillItem">
                     <i className={skill.icon} />
                     <label className="skillLanguage">{skill.text}</label>
                 </div>)}
             </div>
-            <label className="subtitle">Others</label>
+            <label className="subtitle">{language.skills.others}</label>
             <div className="skillsList">
                 {skillsOthers.map((skill, index) => <div key={index.toString()} className="skillItem">
                     <i className={skill.icon} />
                     <label className="skillLanguage">{skill.text}</label>
                 </div>)}
             </div>
-            <label className="subtitle">Interesting</label>
+            <label className="subtitle">{language.skills.interesting}</label>
             <div className="skillsList">
                 {interesting.map((item, index) => <div key={index.toString()} className="skillItem">
                     <i className={item.icon} />

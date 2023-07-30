@@ -5,7 +5,11 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 
 import "./index.scss"
 
-const Contact = () => {
+const Contact = (props: {
+    language: any
+}) => {
+    const { language } = props
+
     const [contcats, _] = useState([
         {
             icon: faGithub,
@@ -25,7 +29,7 @@ const Contact = () => {
     ])
 
     return <div id="contact">
-        <label className="title">Contact</label>
+        <label className="title">{language.contacts}</label>
         <div className="contactList">
             {contcats.map(contact => <a key={contact.name} className="contactItem"
                 href={contact.link} target="_blank">

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { Dispatch, SetStateAction, useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
     faUser,
@@ -11,11 +11,28 @@ import {
 
 import "./index.scss"
 
-const Navbar = () => {
+const Navbar = (props: {
+    language: any,
+    setLanguage: Dispatch<SetStateAction<any>>,
+
+    spanish: any,
+    english: any
+}) => {
+    const {
+        language, setLanguage,
+
+        spanish,
+        english
+    } = props
+
     const [showItems, setShowItems] = useState(false)
 
     const _setShowItems = () => setShowItems(!showItems)
 
+    const clickLanguage = (language: string) => {
+        if (language === "en") setLanguage(english)
+        else if (language === "es") setLanguage(spanish)
+    }
     const clickResponse = () => {
         const items = document.getElementById("items")
 
@@ -42,8 +59,8 @@ const Navbar = () => {
             <a id="title" className="navbar-item" href="/">
                 SYSMA
             </a>
-        
-            <a role="button" className={`navbar-burger ${showItems && "is-active"}`} aria-label="menu" 
+
+            <a role="button" className={`navbar-burger ${showItems && "is-active"}`} aria-label="menu"
                 aria-expanded="false" data-target="navbarBasicExample"
                 onClick={_setShowItems}>
                 <span aria-hidden="true"></span>
@@ -51,18 +68,36 @@ const Navbar = () => {
                 <span aria-hidden="true"></span>
             </a>
         </div>
-  
+
         <div id="navbarBasicExample" className={`navbar-menu ${showItems && "is-active"}`}>
+            <div className="navbar-start">
+                <div className="navbar-item has-dropdown is-hoverable">
+                    <a className="navbar-link">
+                        {language.navbar.language}
+                    </a>
+
+                    <div className="navbar-dropdown">
+                        <a className="navbar-item"
+                            onClick={() => clickLanguage("en")}>
+                            {language.navbar.english}
+                        </a>
+                        <a className="navbar-item"
+                            onClick={() => clickLanguage("es")}>
+                            {language.navbar.spanish}
+                        </a>
+                    </div>
+                </div>
+            </div>
             <div className="navbar-end">
                 <a className="navbar-item" href="#about"
                     onClick={clickItem}>
                     <FontAwesomeIcon className="navbarItemIcon" icon={faUser} />
-                    About
+                    {language.navbar.about}
                 </a>
                 <a className="navbar-item" href="#skills"
                     onClick={clickItem}>
                     <FontAwesomeIcon className="navbarItemIcon" icon={faStar} />
-                    Skills
+                    {language.navbar.skills}
                 </a>
                 {/* <a className="navbar-item" href="#works"
                     onClick={clickItem}>
@@ -72,16 +107,16 @@ const Navbar = () => {
                 <a className="navbar-item" href="#projects"
                     onClick={clickItem}>
                     <FontAwesomeIcon className="navbarItemIcon" icon={faCubes} />
-                    Projects
+                    {language.navbar.projects}
                 </a>
                 <a className="navbar-item" href="#contact"
                     onClick={clickItem}>
                     <FontAwesomeIcon className="navbarItemIcon" icon={faInbox} />
-                    Contact
+                    {language.navbar.contacts}
                 </a>
             </div>
         </div>
-  </nav>
+    </nav>
 }
 
 export { Navbar }

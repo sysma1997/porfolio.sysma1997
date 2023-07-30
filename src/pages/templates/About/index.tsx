@@ -2,20 +2,21 @@ import React from "react"
 
 import "./index.scss"
 
-const About = () => {
+const About = (props: {
+    language: any
+}) => {
+    const { language } = props
+
+    const currentYear = new Date().getFullYear()
+
     return <div id="about">
         <div className="aboutContent">
-            <label className="title">About me</label>
+            <label className="title">{language.about.title}</label>
+            <label className="description">{language.about.me}</label>
             <label className="description">
-                Hi! My name is Sebastian Moreno Acero, I'm from Colombia and I work as a software developer.
+                {language.about.experience.replace("{{years}}", (currentYear - 2018).toString())}
             </label>
-            <label className="description">
-                I have 4 years experience, I which I have developed skills mostly in Web API in .Net Core and Node js, building static web pages and mobile apps.
-            </label>
-            <br />
-            <label className="description">
-                I'm currently very interested in development of video games and blockchain technology.
-            </label>
+            <label className="description">{language.about.interested}</label>
         </div>
     </div>
 }
