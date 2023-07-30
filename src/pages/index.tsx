@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import ReactDOM from "react-dom"
+import ReactDOM from "react-dom/client"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 
@@ -59,5 +59,5 @@ const App = () => {
     </>
 }
 
-const root = document.getElementById("root")
-ReactDOM.render(<App />, root)
+const root = ReactDOM.createRoot(document.getElementById("root"))
+root.render(<App />)

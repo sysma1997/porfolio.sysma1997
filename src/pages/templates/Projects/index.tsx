@@ -22,7 +22,7 @@ const Projects = (props: {
                         </div>
                         {project.links && <div className="links">
                             {project.links.map((link: any) =>
-                                <a className="link" href={link.href} target="_blank">
+                                <a key={link.text} className="link" href={link.href} target="_blank">
                                     {link.text}
                                 </a>)}
                         </div>}

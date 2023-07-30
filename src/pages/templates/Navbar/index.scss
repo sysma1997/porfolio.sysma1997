@@ -10,7 +10,7 @@
 
     .navbar-brand {
         justify-content: space-between;
-        
+
         #title {
             font-size: 1.5rem;
             font-weight: bold;
@@ -18,9 +18,12 @@
     }
 
     .navbar-item {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
         gap: 0.5rem;
+
+        @media screen and (max-width: 1024px) {
+            svg {
+                margin-right: 0.5rem;
+            }
+        }
     }
 }
