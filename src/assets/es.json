@@ -17,7 +17,7 @@
         "title": "Sobre me",
         "me": "Hola! Mi nombre es Sebastian Moreno Acero, de Colombia y trabajo como desarrollador de software.",
         "experience": "Tengo {{years}} de experiencia, el cual he desarrollado habilidades principalmente en Web API en .Net Core y Node js, construyendo páginas web estaticas y aplicaciones móviles.",
-        "interested": "Actualmente estoy muy interesado en el desarrollo de videojuegos and la tecnología blockchain."
+        "interested": "Actualmente estoy muy interesado en el desarrollo de videojuegos y la tecnología blockchain."
     },
     "skills": {
         "title": "Mis habilidades",
