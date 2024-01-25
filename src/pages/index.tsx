@@ -43,7 +43,6 @@ const App = () => {
                         <label className="myName" dangerouslySetInnerHTML={{ __html: language.about.description.myName }} />
                         <label className="interested">{language.about.description.interested}</label>
                     </div>
-                    <img className="profile" src={profile} alt="profile" />
                 </header>
                 <About language={language} />
                 <Skills language={language} />
