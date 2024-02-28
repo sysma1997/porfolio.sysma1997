@@ -1,11 +1,11 @@
 @charset "utf-8";
-/* @import "bulma/css/bulma.min.css"; */
 @import "./shared/global.scss";
 
 .content {
     header {
         padding: 0 5rem;
-        margin: 5rem 0;
+        margin-top: 5rem;
+        margin-bottom: 3rem;
 
         display: flex;
         flex-direction: row;
@@ -21,7 +21,7 @@
         }
 
         .description {
-            color: $linkColorHover;
+            color: $colorPrimary;
 
             display: flex;
             flex-direction: column;
@@ -69,7 +69,7 @@
 }
 
 #up {
-    background-color: $linkColorHover;
+    background-color: $backgroundPrimary;
     border-radius: 50%;
     color: white;
 

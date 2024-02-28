@@ -1,3 +1,4 @@
+@charset "utf-8";
 @import "../../shared/global.scss";
 
 #skills {
@@ -30,6 +31,11 @@
             }
         }
 
+        .title,
+        .subtitle {
+            color: $iconColor;
+        }
+
         .skillsList {
             display: grid;
             grid-auto-flow: dense;
@@ -37,7 +43,7 @@
             gap: 1rem;
 
             .skillItem {
-                background-color: $linkColorHover;
+                background-color: $backgroundPrimary;
                 border-radius: 10%;
                 box-shadow: 0 0.3rem 1rem darkgray;
                 padding: 0.5rem;
@@ -50,14 +56,17 @@
                 align-items: center;
 
                 .skillIcon {
-                    color: white;
                     font-size: 2rem;
                 }
 
                 .skillLanguage {
-                    color: white;
                     font-size: 1.2rem;
                     text-align: center;
+                }
+
+                .skillIcon,
+                .skillLanguage {
+                    color: white;
                 }
             }
 

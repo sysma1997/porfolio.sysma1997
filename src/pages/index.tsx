@@ -3,17 +3,16 @@ import ReactDOM from "react-dom/client"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 
-import { Navbar } from "./templates/Navbar"
-import { About } from "./templates/About"
-import { Skills } from "./templates/Skills"
-/* import { Works } from "./templates/Works" */
-import { Projects } from "./templates/Projects"
-import { Contact } from "./templates/Contact"
-import { Footer } from "./templates/Footer"
+import { Navbar } from "./_content/Navbar"
+import { About } from "./_content/About"
+import { Skills } from "./_content/Skills"
+/* import { Works } from "./_content/Works" */
+import { Projects } from "./_content/Projects"
+import { Contact } from "./_content/Contact"
+import { Footer } from "./_content/Footer"
 
-import profile from "../assets/images/profile.jpg"
-import spanish from "../assets/es.json"
-import english from "../assets/en.json"
+import spanish from "../assets/jsons/es.json"
+import english from "../assets/jsons/en.json"
 
 import "./index.scss"
 
@@ -42,6 +41,7 @@ const App = () => {
                         <label className="hi">{language.about.description.hi}</label>
                         <label className="myName" dangerouslySetInnerHTML={{ __html: language.about.description.myName }} />
                         <label className="interested">{language.about.description.interested}</label>
+                        <Contact language={language} showTitle={false} styleList={false} />
                     </div>
                 </header>
                 <About language={language} />

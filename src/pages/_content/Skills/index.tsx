@@ -17,6 +17,10 @@ const Skills = (props: {
             text: "Typescript"
         },
         {
+            icon: "skillIcon devicon-cplusplus-plain",
+            text: "C++"
+        },
+        {
             icon: "skillIcon devicon-godot-plain",
             text: "GDScript"
         },
@@ -35,7 +39,7 @@ const Skills = (props: {
         {
             icon: "skillIcon devicon-kotlin-plain",
             text: "Kotlin"
-        }
+        },
     ])
     const [skillsDatabases] = useState([
         {
@@ -47,13 +51,13 @@ const Skills = (props: {
             text: "SQLite"
         },
         {
+            icon: "skillIcon devicon-microsoftsqlserver-plain",
+            text: "Microsoft SQL Server"
+        },
+        {
             icon: "skillIcon devicon-mysql-plain",
             text: "MySQL"
         },
-        {
-            icon: "skillIcon devicon-microsoftsqlserver-plain",
-            text: "Microsoft SQL Server"
-        }
     ])
     const [skillsFrameworks] = useState([
         {
@@ -73,10 +77,6 @@ const Skills = (props: {
             text: "Express JS"
         },
         {
-            icon: "skillIcon devicon-jest-plain",
-            text: "Jest"
-        },
-        {
             icon: "skillIcon devicon-dotnetcore-plain",
             text: ".Net Core"
         },
@@ -91,20 +91,20 @@ const Skills = (props: {
             text: "Godot"
         },
         {
-            icon: "skillIcon devicon-docker-plain",
-            text: "Docker"
-        },
-        {
             icon: "skillIcon devicon-android-plain",
             text: "Android"
         },
         {
-            icon: "skillIcon devicon-react-plain",
-            text: "React Native"
-        },
-        {
             icon: "skillIcon devicon-git-plain",
             text: "Git"
+        },
+        {
+            icon: "skillIcon devicon-opengl-plain",
+            text: "OpenGL"
+        },
+        {
+            icon: "skillIcon devicon-react-plain",
+            text: "React Native"
         },
         {
             icon: "skillIcon devicon-bash-plain",
@@ -114,42 +114,34 @@ const Skills = (props: {
             icon: "skillIcon devicon-linux-plain",
             text: "linux"
         },
+        {
+            icon: "skillIcon devicon-docker-plain",
+            text: "Docker"
+        },
     ])
     const [interesting] = useState([
         {
-            icon: "skillIcon devicon-cplusplus-plain",
-            text: "C++"
+            icon: "skillIcon devicon-unrealengine-original",
+            text: "Unreal Engine"
         },
         {
-            icon: "skillIcon devicon-cmake-plain",
-            text: "CMake"
-        },
-        {
-            icon: "skillIcon devicon-opengl-plain",
-            text: "OpenGL"
-        },
-        {
-            icon: "skillIcon",
-            text: "ImGUI"
-        },
-        {
-            icon: "skillIcon devicon-solidity-plain",
-            text: "Solidity"
-        },
-        {
-            icon: "skillIcon devicon-electron-original",
-            text: "electron"
+            icon: "skillIcon devicon-python-plain",
+            text: "Python"
         },
         {
             icon: "skillIcon devicon-rust-plain",
             text: "Rust"
-        }
+        },
+        {
+            icon: "skillIcon devicon-c-plain",
+            text: "C"
+        },
     ])
 
     return <div id="skills">
         <div className="skillsContent">
             <label className="title">{language.skills.title}</label>
-            <label className="subtitle">{language.skills.language}</label>
+            <label className="subtitle">{language.skills.languages}</label>
             <div className="skillsList">
                 {skillsLanguages.map((skill, index) => <div key={index.toString()} className="skillItem">
                     <i className={skill.icon} />

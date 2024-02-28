@@ -6,9 +6,12 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import "./index.scss"
 
 const Contact = (props: {
-    language: any
+    language: any,
+
+    showTitle?: boolean,
+    styleList?: boolean,
 }) => {
-    const { language } = props
+    const { language, showTitle, styleList } = props
 
     const [contcats, _] = useState([
         {
@@ -28,9 +31,12 @@ const Contact = (props: {
         }
     ])
 
-    return <div id="contact">
-        <label className="title">{language.contacts}</label>
-        <div className="contactList">
+    return <div id={(showTitle === undefined || showTitle === null || showTitle === true) ?
+        "contact" : "_contact"}>
+        {(showTitle === undefined || showTitle === null || showTitle === true) &&
+            <label className="title">{language.contacts}</label>}
+        <div className={(styleList === undefined || styleList === null || styleList === true) ?
+            "contactList" : "contactList2"}>
             {contcats.map(contact => <a key={contact.name} className="contactItem"
                 href={contact.link} target="_blank">
                 <FontAwesomeIcon className="contactItemIcon" icon={contact.icon} />

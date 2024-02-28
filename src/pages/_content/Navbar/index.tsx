@@ -1,15 +1,10 @@
 import React, { Dispatch, SetStateAction, useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {
-    faUser,
-    faStar,
-    faBriefcase,
-    faCubes,
-    faInbox,
-    faBars
-} from "@fortawesome/free-solid-svg-icons"
+import { faUser, faStar, faCubes, faInbox } from "@fortawesome/free-solid-svg-icons"
 
 import "./index.scss"
+
+import icon from "../../../assets/images/icon.png"
 
 const Navbar = (props: {
     language: any,
@@ -33,31 +28,15 @@ const Navbar = (props: {
         if (language === "en") setLanguage(english)
         else if (language === "es") setLanguage(spanish)
     }
-    const clickResponse = () => {
-        const items = document.getElementById("items")
-
-        if (showItems) {
-            _setShowItems()
-            items.style.display = "none"
-        }
-        else {
-            _setShowItems()
-            items.style.display = "flex"
-        }
-    }
     const clickItem = () => {
         if (screen.width > 1024) return;
-
-        const items = document.getElementById("items")
-
         _setShowItems()
-        items.style.display = "none"
     }
 
-    return <nav id="menu" className="navbar is-light" role="navigation" aria-label="main navigation">
+    return <nav id="menu" className="navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
             <a id="title" className="navbar-item" href="/">
-                SYSMA
+                <img src={icon} alt="SYSMA" />
             </a>
 
             <a role="button" className={`navbar-burger ${showItems && "is-active"}`} aria-label="menu"

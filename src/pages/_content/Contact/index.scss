@@ -1,10 +1,15 @@
-#contact {
+@charset "utf-8";
+@import "../../shared/global.scss";
+
+#contact,
+#_contact {
     margin-top: 1rem;
 
     display: flex;
     flex-direction: column;
 
     .title {
+        color: $iconColor;
         text-align: center;
         font-size: 2rem;
         font-weight: bold;
@@ -27,6 +32,17 @@
             .contactItemIcon {
                 font-size: 3rem;
             }
+        }
+    }
+
+    .contactList2 {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+
+        .contactItemIcon {
+            font-size: 1.3rem;
+            margin-right: 0.3rem;
         }
     }
 }

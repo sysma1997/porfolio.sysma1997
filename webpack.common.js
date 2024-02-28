@@ -2,6 +2,7 @@ const path = require("path")
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
+const CopyPlugin = require("copy-webpack-plugin")
 
 module.exports = {
     entry: {
@@ -16,7 +17,12 @@ module.exports = {
         }),
 
         new MiniCssExtractPlugin(),
-        new NodePolyfillPlugin()
+        new NodePolyfillPlugin(),
+        new CopyPlugin({
+            patterns: [
+                { from: "./favicon.png", to: "./favicon.png" }
+            ]
+        })
     ],
     output: {
         filename: "[name].[contenthash].js",
