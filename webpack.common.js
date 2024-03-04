@@ -20,7 +20,8 @@ module.exports = {
         new NodePolyfillPlugin(),
         new CopyPlugin({
             patterns: [
-                { from: "./favicon.png", to: "./favicon.png" }
+                { from: "./favicon.png", to: "./favicon.png" },
+                { from: "./src/assets/images/itch-io.png", to: "./assets/images/itch-io.png" }
             ]
         })
     ],

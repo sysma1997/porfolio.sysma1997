@@ -12,17 +12,24 @@ const Projects = (props: {
             <label className="title">{language.projects.title}</label>
             <div className="projectsList">
                 {language.projects.list.map((project: any) => <div key={project.name} className="project">
+                    <div className="title">
+                        <label>{project.name}</label>
+                    </div>
                     <div className="content">
                         <div className="information">
-                            <label className="title">{project.name}</label>
                             <label className="description">{project.description}</label>
                         </div>
                         <div className="tags">
-                            {project.tags.map((tag: string) => <span key={tag} className="tag">{tag}</span>)}
+                            {project.tags.map((tag: any, index: number) => <span key={index} className="tag">
+                                <i className={tag.icon} />
+                                {tag.text}
+                            </span>)}
                         </div>
                         {project.links && <div className="links">
-                            {project.links.map((link: any) =>
-                                <a key={link.text} className="link" href={link.href} target="_blank">
+                            {project.links.map((link: any, index: number) =>
+                                <a key={index} className="link" href={link.href} target="_blank">
+                                    {(link.icon) && <i className={link.icon} />}
+                                    {(link.image) && <img src={link.image} alt={link.text} />}
                                     {link.text}
                                 </a>)}
                         </div>}

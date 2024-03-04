@@ -12,12 +12,12 @@
         "description": {
             "hi": "Hello!",
             "myName": "I'm <b>SYSMA</b> a software development",
-            "interested": "Very interested in game development."
+            "interested": "Very interested in game development engines."
         },
         "title": "About me",
         "me": "Hi! My name is Sebastian Moreno Acero, I'm from Colombia and I work as a software developer.",
         "experience": "I have {{years}} years experience, which I have developed skills mostly in Web API in .Net Core and Node js, building static web pages and mobile apps.",
-        "interested": "I'm currently very interested in development of video games and blockchain technology."
+        "interested": "I'm currently very interested in development of engines with C++, OpenGL, Vulkan, DirectX and video games."
     },
     "skills": {
         "title": "My skills",
@@ -34,15 +34,34 @@
                 "name": "Template for webpack with react and multiple page",
                 "description": "Simple template to use React with multiple page for servers only static files.",
                 "tags": [
-                    "NodeJS",
-                    "Webpack",
-                    "Babel",
-                    "React",
-                    "Typescript",
-                    "Sass"
+                    {
+                        "icon": "devicon-nodejs-plain",
+                        "text": "NodeJS"
+                    },
+                    {
+                        "icon": "devicon-webpack-plain",
+                        "text": "Webpack"
+                    },
+                    {
+                        "icon": "devicon-babel-plain",
+                        "text": "Babel"
+                    },
+                    {
+                        "icon": "devicon-react-plain",
+                        "text": "React"
+                    },
+                    {
+                        "icon": "devicon-typescript-plain",
+                        "text": "Typescript"
+                    },
+                    {
+                        "icon": "devicon-sass-original",
+                        "text": "Sass"
+                    }
                 ],
                 "links": [
                     {
+                        "icon": "devicon-github-original",
                         "text": "Github",
                         "href": "https://github.com/sysma1997/template-webpack-react-multiple-page"
                     }
@@ -52,15 +71,23 @@
                 "name": "Pong",
                 "description": "Pong is a table tennis–themed twitch arcade sports video game, featuring simple two-dimensional graphics, manufactured by Atari and originally released in 1972.",
                 "tags": [
-                    "GDScript",
-                    "Godot engine"
+                    {
+                        "icon": "devicon-godot-plain",
+                        "text": "GDScript"
+                    },
+                    {
+                        "icon": "devicon-godot-plain",
+                        "text": "Godot engine"
+                    }
                 ],
                 "links": [
                     {
+                        "icon": "devicon-github-original",
                         "text": "Github",
                         "href": "https://github.com/sysma1997/Pong"
                     },
                     {
+                        "image": "/assets/images/itch-io.png",
                         "text": "Itch.io",
                         "href": "https://sysma51.itch.io/pong"
                     }
@@ -70,15 +97,23 @@
                 "name": "PacMan",
                 "description": "PacMan is an arcade video game created by video game designer Toru Iwatani of the Namco company, and distributed by Midway Games to the American market in the early 1980s.",
                 "tags": [
-                    "GDScript",
-                    "Godot engine"
+                    {
+                        "icon": "devicon-godot-plain",
+                        "text": "GDScript"
+                    },
+                    {
+                        "icon": "devicon-godot-plain",
+                        "text": "Godot engine"
+                    }
                 ],
                 "links": [
                     {
+                        "icon": "devicon-github-original",
                         "text": "Github",
                         "href": "https://github.com/sysma1997/PacMan"
                     },
                     {
+                        "image": "/assets/images/itch-io.png",
                         "text": "Itch.io",
                         "href": "https://sysma51.itch.io/pacman"
                     }

@@ -3,9 +3,10 @@
 
 .content {
     header {
+        background-color: whitesmoke;
         padding: 0 5rem;
-        margin-top: 5rem;
-        margin-bottom: 3rem;
+        padding-top: 5rem;
+        padding-bottom: 2rem;
 
         display: flex;
         flex-direction: row;
@@ -60,8 +61,8 @@
 
         @media screen and (max-width: 1024px) {
             height: auto;
-            padding: 0;
-            margin: 1rem;
+            padding: 1rem;
+            margin: 0;
 
             flex-direction: column-reverse;
         }
