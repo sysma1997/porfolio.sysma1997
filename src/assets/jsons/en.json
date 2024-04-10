@@ -31,6 +31,39 @@
         "title": "Projects",
         "list": [
             {
+                "name": "Sysma Notes",
+                "description": "Simple Web API project with login, registration with email confirmation, profile update, note creation, editing and deletion.",
+                "tags": [
+                    {
+                        "icon": "devicon-dotnetcore-plain",
+                        "text": ".Net Core"
+                    },
+                    {
+                        "icon": "devicon-csharp-plain",
+                        "text": "C#"
+                    },
+                    {
+                        "icon": "devicon-react-plain",
+                        "text": "React"
+                    },
+                    {
+                        "icon": "devicon-typescript-plain",
+                        "text": "Typescript"
+                    },
+                    {
+                        "icon": "devicon-sass-original",
+                        "text": "Sass"
+                    }
+                ],
+                "links": [
+                    {
+                        "icon": "devicon-github-original",
+                        "text": "Github",
+                        "href": "https://github.com/sysma1997/Sysma-Notes"
+                    }
+                ]
+            },
+            {
                 "name": "Template for webpack with react and multiple page",
                 "description": "Simple template to use React with multiple page for servers only static files.",
                 "tags": [
