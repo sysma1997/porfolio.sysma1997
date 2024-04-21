@@ -31,6 +31,27 @@
         "title": "Proyectos",
         "list": [
             {
+                "name": "Library", 
+                "description": "Simple proyecto de WPF con C#, libreria donde puede llevar un registro de los libros, clientes y prestamos.",
+                "tags": [
+                    {
+                        "icon": "devicon-dotnetcore-plain", 
+                        "text": ".Net Core"
+                    }, 
+                    {
+                        "icon": "devicon-csharp-plain", 
+                        "text": "C#"
+                    }
+                ], 
+                "links": [
+                    {
+                        "icon": "devicon-github-original", 
+                        "text": "Github", 
+                        "href": "https://github.com/sysma1997/LibraryApp"
+                    }
+                ]
+            },
+            {
                 "name": "Sysma Notes",
                 "description": "Simple proyecto de Web API con inicio de sesión, registro con confirmacion de correo, actualizacion de perfil, creación de notas, edisión y eliminación.",
                 "tags": [
