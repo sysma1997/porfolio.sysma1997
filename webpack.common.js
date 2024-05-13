@@ -6,7 +6,8 @@ const CopyPlugin = require("copy-webpack-plugin")
 
 module.exports = {
     entry: {
-        index: "./src/pages/index.tsx"
+        index: "./src/pages/index.tsx", 
+        "./GumFall/PrivacyPolices/index": "./src/pages/GumFall/PrivacyPolices/index.tsx"
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -14,6 +15,12 @@ module.exports = {
             filename: "index.html",
             template: "./src/pages/index.html",
             chunks: ["index"]
+        }),
+        new HtmlWebpackPlugin({
+            title: "GumFallPrivacyPolices", 
+            filename: "GumFall/PrivacyPolices/index.html", 
+            template: "./src/pages/index.html", 
+            chunks: ["./GumFall/PrivacyPolices/index"]
         }),
 
         new MiniCssExtractPlugin(),
