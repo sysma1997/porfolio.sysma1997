@@ -28,7 +28,8 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 { from: "./favicon.png", to: "./favicon.png" },
-                { from: "./src/assets/images/itch-io.png", to: "./assets/images/itch-io.png" }
+                { from: "./src/assets/images/itch-io.png", to: "./assets/images/itch-io.png" }, 
+                { from: "./app-ads.txt", to: "./app-ads.txt" }
             ]
         })
     ],
