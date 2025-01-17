@@ -28,8 +28,8 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 { from: "./favicon.png", to: "./favicon.png" },
-                { from: "./src/assets/images/itch-io.png", to: "./assets/images/itch-io.png" }, 
-                { from: "./app-ads.txt", to: "./app-ads.txt" }
+                { from: "./app-ads.txt", to: "./app-ads.txt" }, 
+                { from: "./src/public/", to: "./" }
             ]
         })
     ],
@@ -66,19 +66,6 @@ module.exports = {
             {
                 test: /\.css$/i,
                 use: [MiniCssExtractPlugin.loader, "css-loader"]
-            },
-            {
-                test: /\.scss$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    { loader: "css-loader" },
-                    {
-                        loader: "sass-loader",
-                        options: {
-                            sourceMap: true
-                        }
-                    }
-                ]
             },
             {
                 test: /\.(png|jpg|jpeg|svg|gif)$/i,

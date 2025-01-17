@@ -141,7 +141,7 @@
                         "href": "https://github.com/sysma1997/Pong"
                     },
                     {
-                        "image": "/assets/images/itch-io.png",
+                        "image": "/images/itch-io.png",
                         "text": "Itch.io",
                         "href": "https://sysma51.itch.io/pong"
                     }
@@ -167,7 +167,7 @@
                         "href": "https://github.com/sysma1997/PacMan"
                     },
                     {
-                        "image": "/assets/images/itch-io.png",
+                        "image": "/images/itch-io.png",
                         "text": "Itch.io",
                         "href": "https://sysma51.itch.io/pacman"
                     }

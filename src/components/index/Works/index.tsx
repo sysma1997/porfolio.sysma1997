@@ -1,13 +1,13 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 
-import "./index.scss"
-import fixmathIcon from "../../../assets/images/projects/fixmath.jpg"
+import "./index.css";
+/* import fixmathIcon from "../../../assets/images/projects/fixmath.jpg"; */
 
 const Works = () => {
     const [works, _] = useState([
         {
             name: "FixMath",
-            image: fixmathIcon,
+            /* image: fixmathIcon, */
             description: "It is an application that seeks to improve the way of organizing personal finances, in order to keep track of the budget. Registering daily the management of your income and thus optimize your savings and spending habits.",
             tags: [
                 "Deno js",
@@ -23,7 +23,7 @@ const Works = () => {
                 }
             ]
         }
-    ])
+    ]);
 
     return <div id="works">
         <div className="worksContent">
@@ -47,12 +47,12 @@ const Works = () => {
                         </a>)}
                     </div>
                     <div className="contentImage">
-                        <img className="image" src={work.image} alt={work.name} />
+                        {/* <img className="image" src={work.image} alt={work.name} /> */}
                     </div>
                 </div>)}
             </div>
         </div>
-    </div>
-}
+    </div>;
+};
 
-export { Works }
+export { Works };

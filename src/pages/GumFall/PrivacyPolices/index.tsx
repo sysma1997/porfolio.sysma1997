@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 
-import "./index.scss";
+import "./index.css";
 
 import icon from "../../../assets/GumFall/icon.png";
 
@@ -74,7 +74,7 @@ const GumFallPrivacyPolices = () => {
                     Our top priority is the security of customer data and as such we may process only minimal user data, only to the extent absolutely necessary to maintain the website. The information collected automatically is used only to identify potential cases of abuse and establish statistical information about website usage. This statistical information is not aggregated in such a way as to identify any particular user of the system.
                 </div>
                 <div className="block">
-                    You can visit the site without telling us who you are or revealing any information by which someone could identify you as a specific person. However, if you want to use some of the app's features, or want to receive our newsletter or provide other details by filling out a form, you can provide us with personal data, such as your email, first name, last name, city of residence, organization and number. of phone. You can choose not to provide your personal data, but you may not be able to take advantage of some of the app's features. For example, you will not be able to receive our newsletter or contact us directly from the app. Users who are unsure what information is required can contact us at sysma1997@gmail.com.
+                    You can visit the site without telling us who you are or revealing any information by which someone could identify you as a specific person. However, if you want to use some of the app's features, or want to receive our newsletter or provide other details by filling out a form, you can provide us with personal data, such as your email, first name, last name, city of residence, organization and number. of phone. You can choose not to provide your personal data, but you may not be able to take advantage of some of the app's features. For example, you will not be able to receive our newsletter or contact us directly from the app. Users who are unsure what information is required can contact us at <a href="mailto: sysma1997@gmail.com">sysma1997@gmail.com</a>.
                 </div>
 
                 <h2><b>YOUR RIGHTS:</b></h2>
@@ -115,14 +115,14 @@ const GumFallPrivacyPolices = () => {
 
                 <h2><b>CONTACT INFORMATION:</b></h2>
                 <div className="block">
-                    If you wish to contact us to understand more about this Policy or wish to contact us regarding any matter regarding individual rights and your personal information, you may email us at sysma1997@gmail.com.
+                    If you wish to contact us to understand more about this Policy or wish to contact us regarding any matter regarding individual rights and your personal information, you may email us at <a href="mailto: sysma1997@gmail.com">sysma1997@gmail.com</a>.
                 </div>
 
                 <h2><b>OTHERS:</b></h2>
                 <div className="block">
                     These policies also apply to the following applications:
                     <ul>
-                        <li>ANDROID</li>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.sysma1997.gumfall" target="_blank">ANDROID</a></li>
                     </ul>
                 </div>
             </div>
