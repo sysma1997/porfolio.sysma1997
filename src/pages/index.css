@@ -179,3 +179,15 @@ footer p {
         margin: 1rem;
     }
 }
+
+@media (prefers-color-scheme: dark) {
+    .content header {
+        background-color: #281c2b;
+    }
+    footer {
+        background-color: #281c2b;
+    }
+    footer p {
+        color: var(--colorPrimary);
+    };
+}

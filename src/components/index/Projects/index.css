@@ -34,6 +34,9 @@
 }
 #projects .projectsContent .projectsList .project .title {
     background-color: var(--backgroundPrimary);
+    border-bottom: 0.2rem solid var(--iconColor);
+    text-align: center;
+    padding-bottom: 0.3rem;
 }
 #projects .projectsContent .projectsList .project .title label {
     font-size: 1.3rem;
@@ -94,5 +97,11 @@
     }
     #projects .projectsContent .projectsList {
         grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    #projects .projectsContent .projectsList .project {
+        box-shadow: 6px 0.4rem 0.8rem 0.1rem #353535;
     }
 }

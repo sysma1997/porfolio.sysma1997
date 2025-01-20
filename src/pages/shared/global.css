@@ -40,3 +40,9 @@ body a:hover {
     width: 0;
     background: transparent;
 }
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --colorPrimary: #e3e3e3;
+    }
+}

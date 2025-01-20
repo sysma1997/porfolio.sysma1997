@@ -65,3 +65,9 @@
         gap: 0;
     }
 }
+
+@media (prefers-color-scheme: dark) {
+    #skills .skillsContent .skillsList .skillItem {
+        box-shadow: 0 0.3rem 1rem #353535;
+    }
+}

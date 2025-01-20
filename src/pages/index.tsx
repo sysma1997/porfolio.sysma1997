@@ -134,17 +134,17 @@ const App = () => {
                 </div>
             </div>
 
-            <section id="skills" className="section">
+            <section id="skills">
                 <h1 className="title">Skills</h1>
                 <Skills language={language} />
             </section>
             {/* <Works /> */}
-            <section id="projects" className="section">
+            <section id="projects">
                 <h1 className="title">Projects</h1>
                 <Projects language={language} />
             </section>
 
-            <section id="contact" className="section">
+            <section id="contact">
                 <h1 className="title">Contacts</h1>
                 <Contact />
             </section>
