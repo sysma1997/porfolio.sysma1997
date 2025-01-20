@@ -1,58 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import "./index.css";
-/* import fixmathIcon from "../../../assets/images/projects/fixmath.jpg"; */
 
-const Works = () => {
-    const [works, _] = useState([
-        {
-            name: "FixMath",
-            /* image: fixmathIcon, */
-            description: "It is an application that seeks to improve the way of organizing personal finances, in order to keep track of the budget. Registering daily the management of your income and thus optimize your savings and spending habits.",
-            tags: [
-                "Deno js",
-                "Postgres SQL",
-                "React js",
-                "Finances",
-                "Currencies"
-            ],
-            links: [
-                {
-                    type: "Page",
-                    href: "https://fixmath.deno.dev/"
-                }
-            ]
-        }
-    ]);
+export const Works = () => {
+    const [works, setWorks] = useState<Array<any>>();
 
-    return <div id="works">
-        <div className="worksContent">
-            <label className="title">Works</label>
-            <div className="worksList">
-                {works.map(work => <div key={work.name} className="work">
-                    <div className="content">
-                        <div className="information">
-                            <label className="title">{work.name}</label>
-                            <label className="description">{work.description}</label>
-                        </div>
-                        <div className="tags">
-                            {work.tags.map((tag, index) => <span key={index.toString()} className="tag">{tag}</span>)}
-                        </div>
-                        {work.links.map(link => <a
-                            key={link.type}
-                            className="link"
-                            href={link.href}
-                            target="_blank">
-                            {link.type}
-                        </a>)}
+    useEffect(() => {
+        fetch("/json/works.json").then(response => response.json()).then(data => {
+            setWorks(data);
+        });
+    }, []);
+
+    return <div className="worksContent">
+        <div className="worksList">
+            {(works) && works.map((work: any) => <div key={work.name} className="work">
+                <div className="title">
+                    <label>{work.name}</label>
+                </div>
+                <div className="content">
+                    <div className="information">
+                        <label className="description">{work.description}</label>
                     </div>
-                    <div className="contentImage">
-                        {/* <img className="image" src={work.image} alt={work.name} /> */}
+                    <div className="tags">
+                        {work.tags.map((tag: any, index: number) => <span key={index} className="tag">
+                            <i className={tag.icon} />
+                            {tag.text}
+                        </span>)}
                     </div>
-                </div>)}
-            </div>
+                    {work.links && <div className="links">
+                        {work.links.map((link: any, index: number) =>
+                            <a key={index} className="link" href={link.href} target="_blank">
+                                {(link.icon) && <i className={link.icon} />}
+                                {(link.image) && <img src={link.image} alt={link.text} />}
+                                {link.text}
+                            </a>)}
+                    </div>}
+                </div>
+            </div>)}
         </div>
     </div>;
 };
-
-export { Works };

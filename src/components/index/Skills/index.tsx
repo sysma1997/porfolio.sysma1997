@@ -2,11 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import "./index.css";
 
-const Skills = (props: {
-    language: any
-}) => {
-    const { language } = props;
-
+const Skills = () => {
     const [skills, setSkills] = useState<Array<any>>();
 
     useEffect(() => {

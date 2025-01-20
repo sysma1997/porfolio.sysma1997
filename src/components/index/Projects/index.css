@@ -1,6 +1,3 @@
-@import "../../../pages/shared/global.css";
-@import "../../../pages/shared/tags.css";
-
 #projects {
     margin-top: 2rem;
 
@@ -15,61 +12,33 @@
     display: flex;
     flex-direction: column;
 }
-#projects .projectsContent .projectsList {
-    display: grid;
-    grid-auto-flow: dense;
-    grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
-    gap: 1rem;
-}
 #projects .projectsContent .projectsList .project {
-    border: 1px solid var(--backgroundPrimary);
-    border-radius: 0.3rem;
-    box-shadow: 6px 0.4rem 0.8rem 0.1rem #e5b7f5;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-#projects .projectsContent .projectsList .project .title {
-    background-color: var(--backgroundPrimary);
-    border-bottom: 0.2rem solid var(--iconColor);
-    text-align: center;
-    padding-bottom: 0.3rem;
-}
-#projects .projectsContent .projectsList .project .title label {
-    font-size: 1.3rem;
+#projects .projectsContent .projectsList .project .title, 
+#projects .projectsContent .projectsList .project .content .tags .tag, 
+#projects .projectsContent .projectsList .project .links .link {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }
 #projects .projectsContent .projectsList .project .content {
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-
-    flex: 1;
+    width: 60%;
 }
 #projects .projectsContent .projectsList .project .content .information {
-    padding: 1rem;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0.3rem;
-
-    flex: 1;
+    gap: 1rem;
 }
-#projects .projectsContent .projectsList .project .content .information label {
-    color: var(--colorPrimary);
-    text-align: center;
-    margin: 0;
-}
-#projects .projectsContent .projectsList .project .content .links {
-    margin-bottom: 0.5rem;
+#projects .projectsContent .projectsList .project .content .tags {
+    margin-top: 1rem;
 
     display: flex;
     flex-direction: row;
@@ -77,20 +46,13 @@
     align-items: center;
     gap: 0.5rem;
 }
-#projects .projectsContent .projectsList .project .content .links .link {
+#projects .projectsContent .projectsList .project .links {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 1.5rem;
 }
-#projects .projectsContent .projectsList .project .content .links .link i {
-    margin-right: 0.3rem;
-}
-#projects .projectsContent .projectsList .project .content .links .link img {
-    width: 1rem;
-    margin-right: 0.3rem;
-}
-
 @media screen and (max-width: 1024px) {
     #projects .projectsContent {
         width: 90%;
@@ -98,10 +60,14 @@
     #projects .projectsContent .projectsList {
         grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
     }
-}
 
-@media (prefers-color-scheme: dark) {
-    #projects .projectsContent .projectsList .project {
-        box-shadow: 6px 0.4rem 0.8rem 0.1rem #353535;
+    #projects .projectsContent .projectsList .project .content {
+        width: 90%;
     }
 }
+
+/* @media (prefers-color-scheme: dark) {
+    #projects .projectsContent .projectsList .work {
+        box-shadow: 6px 0.4rem 0.8rem 0.1rem #353535;
+    }
+} */
