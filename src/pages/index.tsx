@@ -4,7 +4,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
     fas, faUser, faStar, faCubes, faInbox, faFolder, 
-    faArrowUp, faGamepad
+    faArrowUp
 } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 
@@ -104,16 +104,6 @@ const App = () => {
                         <FontAwesomeIcon className="navbarItemIcon" icon={faStar} />
                         Skills
                     </a>
-                    <a className="navbar-item" href="#skills"
-                        onClick={clickItem}>
-                        <FontAwesomeIcon className="navbarItemIcon" icon={["fab", "gamepad"]} />
-                        Gamepad
-                    </a>
-                    {/* <a className="navbar-item" href="#works"
-                        onClick={clickItem}>
-                        <FontAwesomeIcon className="navbarItemIcon" icon={faBriefcase} />
-                        Works
-                    </a> */}
                     <a className="navbar-item" href="#works"
                         onClick={clickItem}>
                         <FontAwesomeIcon className="navbarItemIcon" icon={faCubes} />
@@ -157,7 +147,6 @@ const App = () => {
                 <h1 className="title">Skills</h1>
                 <Skills />
             </section>
-            {/* <Works /> */}
             <section id="works">
                 <h1 className="title">Works</h1>
                 <Works />
