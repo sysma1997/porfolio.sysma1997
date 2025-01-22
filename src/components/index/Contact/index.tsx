@@ -1,7 +1,6 @@
 import React, { useState } from "react";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 import "./index.css";
 
@@ -10,19 +9,23 @@ const Contact = (props: {
 }) => {
     const { styleList } = props;
 
-    const [contcats, _] = useState([
+    const [contcats, _] = useState<Array<{
+        icon: IconProp,
+        name: string,
+        link: string
+    }>>([
         {
-            icon: faGithub,
+            icon: ["fab", "github"],
             name: "GitHub",
             link: "https://github.com/sysma1997"
         },
         {
-            icon: faLinkedin,
+            icon: ["fab", "linkedin"],
             name: "LinkedIn",
             link: "https://www.linkedin.com/in/sebastian-moreno-acero-0a3138187"
         },
         {
-            icon: faEnvelope,
+            icon: ["fas", "envelope"],
             name: "Email",
             link: "mailto: sysma1997@gmail.com"
         }

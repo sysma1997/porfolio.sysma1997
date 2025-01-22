@@ -6,8 +6,7 @@ export const Works = () => {
     const [works, setWorks] = useState<Array<any>>();
 
     useEffect(() => {
-        const url = "https://drive.google.com/uc?id=1AQB3H6IZ6qq_Ib8m0bfbhh60ijLsX-eL&export=download";
-        fetch(url).then(response => response.json()).then(data => {
+        fetch("/json/works.json").then(response => response.json()).then(data => {
             setWorks(data);
         }).catch(error => console.error(error));
     }, []);

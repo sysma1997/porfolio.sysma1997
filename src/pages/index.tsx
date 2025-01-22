@@ -2,10 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-    fas, faUser, faStar, faCubes, faInbox, faFolder, 
-    faArrowUp
-} from '@fortawesome/free-solid-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 
 import { Projects } from "../components/index/Projects";
@@ -13,7 +10,6 @@ import { Skills } from "../components/index/Skills";
 import { Works } from "../components/index/Works";
 import { Contact } from "../components/index/Contact";
 
-import icon from "../assets/images/icon.png";
 /* import spanish from "../assets/jsons/es.json";
 import english from "../assets/jsons/en.json"; */
 
@@ -56,7 +52,7 @@ const App = () => {
         <nav id="menu" className="navbar" role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
                 <a id="title" className="navbar-item" href="#">
-                    <img src={icon} alt="SYSMA" />
+                    <img src="/images/icon.png" alt="SYSMA" />
                 </a>
     
                 <a role="button" className={`navbar-burger ${showItems && "is-active"}`} aria-label="menu"
@@ -91,27 +87,27 @@ const App = () => {
                 <div className="navbar-end">
                     <a className="navbar-item" href="#about"
                         onClick={clickItem}>
-                        <FontAwesomeIcon className="navbarItemIcon" icon={faUser} />
+                        <FontAwesomeIcon className="navbarItemIcon" icon={["fas", "user"]} />
                         About
                     </a>
                     <a className="navbar-item" href="#projects"
                         onClick={clickItem}>
-                        <FontAwesomeIcon className="navbarItemIcon" icon={faFolder} />
+                        <FontAwesomeIcon className="navbarItemIcon" icon={["fas", "folder"]} />
                         Projects
                     </a>
                     <a className="navbar-item" href="#skills"
                         onClick={clickItem}>
-                        <FontAwesomeIcon className="navbarItemIcon" icon={faStar} />
+                        <FontAwesomeIcon className="navbarItemIcon" icon={["fas", "star"]} />
                         Skills
                     </a>
                     <a className="navbar-item" href="#works"
                         onClick={clickItem}>
-                        <FontAwesomeIcon className="navbarItemIcon" icon={faCubes} />
+                        <FontAwesomeIcon className="navbarItemIcon" icon={["fas", "cubes"]} />
                         Works
                     </a>
                     <a className="navbar-item" href="#contact"
                         onClick={clickItem}>
-                        <FontAwesomeIcon className="navbarItemIcon" icon={faInbox} />
+                        <FontAwesomeIcon className="navbarItemIcon" icon={["fas", "inbox"]} />
                         Contacts
                     </a>
                 </div>
@@ -159,7 +155,7 @@ const App = () => {
         </div>
 
         <a id="up" href="#">
-            <FontAwesomeIcon icon={faArrowUp} />
+            <FontAwesomeIcon icon={["fas", "arrow-up"]} />
         </a>
 
         <footer>

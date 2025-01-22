@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 
-import "./index.css";
+import { Menu } from "../../../components/gumFall/menu";
 
-import icon from "../../../assets/GumFall/icon.png";
+import "./index.css";
 
 document.title = "Gum Fall Privacy Polices";
 // Change shorcut icon
@@ -11,46 +11,13 @@ document.title = "Gum Fall Privacy Polices";
     const link: any = document.querySelector("link[rel*='icon']") || document.createElement('link');
     link.type = 'image/png';
     link.rel = 'shortcut icon';
-    link.href = icon;
+    link.href = "/images/gum-fall-icon.png";
     document.getElementsByTagName('head')[0].appendChild(link);
 }
 
 const GumFallPrivacyPolices = () => {
-    const [showItems, setShowItems] = useState(false);
-
-    const _setShowItems = () => setShowItems(!showItems);
-
     return <>
-        <nav id="menu" className="navbar" role="navigation" aria-label="main navigation">
-            <div className="navbar-brand">
-                <a id="title" className="navbar-item" href="#">
-                    <img src={icon} alt="Gum Fall" />
-                    <b style={{marginLeft: 10}}>GUM FALL</b>
-                </a>
-
-                <a role="button" className={`navbar-burger ${showItems && "is-active"}`} aria-label="menu"
-                    aria-expanded="false" data-target="navbarBasicExample"
-                    onClick={_setShowItems}>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-            </div>
-
-            <div id="navbarBasicExample" className={`navbar-menu ${showItems && "is-active"}`}>
-                <div className="navbar-start">
-                    <a className="navbar-item">
-                            Privacy Polices
-                    </a>
-                </div>
-                <div className="navbar-end">
-                    <a className="navbar-item" href="/">
-                        <b>SYSMA</b>
-                    </a>
-                </div>
-            </div>
-        </nav>
+        <Menu />
 
         <div className="gumFallPP">
             <h1 className="title"><b>Privacy polices</b></h1>

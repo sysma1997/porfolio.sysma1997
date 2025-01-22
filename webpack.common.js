@@ -7,7 +7,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 module.exports = {
     entry: {
         index: "./src/pages/index.tsx", 
-        "./backoffice/index": "./src/pages/backoffice/index.tsx", 
+        "./GumFall/index": "./src/pages/GumFall/index.tsx",  
         "./GumFall/PrivacyPolices/index": "./src/pages/GumFall/PrivacyPolices/index.tsx"
     },
     plugins: [
@@ -18,10 +18,10 @@ module.exports = {
             chunks: ["index"]
         }),
         new HtmlWebpackPlugin({
-            title: "Backoffice",
-            filename: "backoffice/index.html",
-            template: "./src/pages/backoffice/index.html",
-            chunks: ["./backoffice/index"]
+            title: "GumFall",
+            filename: "GumFall/index.html",
+            template: "./src/pages/index.html",
+            chunks: ["./GumFall/index"]
         }), 
         new HtmlWebpackPlugin({
             title: "GumFallPrivacyPolices", 
@@ -34,7 +34,6 @@ module.exports = {
         new NodePolyfillPlugin(),
         new CopyPlugin({
             patterns: [
-                { from: "./favicon.png", to: "./favicon.png" },
                 { from: "./app-ads.txt", to: "./app-ads.txt" }, 
                 { from: "./src/public/", to: "./" }
             ]
