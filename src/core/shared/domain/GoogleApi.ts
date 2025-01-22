@@ -3,6 +3,16 @@
 declare const gapi: gapi | undefined;
 declare const google: google | undefined;
 
+export interface GoogleDrive {
+    client_id: string,
+    api_key: string,
+    discovery_doc: string,
+    scopes: string,
+
+    tokenClient?: any,
+    gapiInited: boolean,
+    googleInited: boolean
+}
 export interface gapi {
     load: (api: string, callback: () => void) => void;
     client: {
@@ -17,8 +27,16 @@ export interface gapi {
         drive: {
             files: {
                 list(config: {
-                    pageSize: number,
-                    fields: string
+                    fields: string, 
+                    q?: string
+                    pageSize?: number,
+                }): Promise<any>;
+                get(config: {
+                    fileId: string,
+                    fields?: string
+                }): Promise<any>;
+                download(config: {
+                    fileId: string
                 }): Promise<any>;
             }
         }
@@ -30,8 +48,9 @@ export interface google {
             initTokenClient: (config: {
                 client_id: string,
                 scope: string,
-                callback?: (response: any) => void
+                callback?: (response: any) => void | string
             }) => any;
+            revoke: (token: string) => void;
         }
     }
 }

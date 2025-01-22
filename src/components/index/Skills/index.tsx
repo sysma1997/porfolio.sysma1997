@@ -6,7 +6,9 @@ const Skills = () => {
     const [skills, setSkills] = useState<Array<any>>();
 
     useEffect(() => {
-        fetch("/json/skills.json").then(response => response.json()).then(data => setSkills(data));
+        const url = "https://drive.google.com/uc?id=1UM9gj5tQtKmcQpIBWWh7ALexMkNfkXqO&export=download";
+        fetch(url).then(response => response.json()).then(data => setSkills(data))
+            .catch(error => console.error(error));
     }, [])
 
     return <div className="skillsContent">

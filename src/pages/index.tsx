@@ -7,7 +7,6 @@ import {
     faArrowUp
 } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import GoTrue from "gotrue-js";
 
 import { Projects } from "../components/index/Projects";
 import { Skills } from "../components/index/Skills";
@@ -36,19 +35,10 @@ const App = () => {
     const [showItems, setShowItems] = useState<boolean>(false);
     
     const [currentYear, _] = useState<number>(new Date().getFullYear());
-
-    const [register, isRegister] = useState<boolean>(false);
-    const [token, setToken] = useState<string>("");
-    const [password, setPassword] = useState<string>("");
     
     useEffect(() => {
         /* if (locale === "en") setLanguage(english);
         else if (locale === "es") setLanguage(spanish); */
-
-        if (window.location.hash.indexOf("#invite_token") !== -1) {
-            setToken(window.location.hash.split("=")[1]);
-            isRegister(true);
-        }
     }, []);
 
     const _setShowItems = () => setShowItems(!showItems);
@@ -60,25 +50,6 @@ const App = () => {
     const clickItem = () => {
         if (screen.width > 1024) return;
         _setShowItems();
-    };
-
-    const clickRegister = () => {
-        if (password === "") {
-            alert("Password is required.");
-            return;
-        }
-
-        const auth = new GoTrue({
-            APIUrl: "https://sysma1997.netlify.app/.netlify/identity",
-            setCookie: false
-        });
-        auth.acceptInvite(token, password, true)
-            .then(response => {
-                console.log("Response", response);
-                alert("User register successfully.");
-                window.location.href = "/backoffice";
-            })
-            .catch(error => console.error("Error", error));
     };
 
     return <>
@@ -194,30 +165,6 @@ const App = () => {
         <footer>
             <p dangerouslySetInnerHTML={{ __html: "Created by <b>SYSMA</b>" }} />
         </footer>
-
-        {(register) && <div className="modal is-active">
-            <div className="modal-background" />
-            <div className="modal-card">
-                <header className="modal-card-head" style={{ backgroundColor: "var(--backgroundPrimary)" }}>
-                    <p className="modal-card-title" style={{ color: "white" }}>Register</p>
-                </header>
-                <section className="modal-card-body">
-                    <label>Token: {token}</label>
-                    <div className="field">
-                        <label className="label">Password</label>
-                        <div className="control">
-                            <input className="input" type="password" placeholder="Password" 
-                                value={password} onChange={event => setPassword(event.target.value)} />
-                        </div>
-                    </div>
-                </section>
-                <footer className="modal-card-foot is-flex is-justify-content-flex-end" 
-                    style={{ padding: "1rem 2rem" }}>
-                    <button className="button" style={{ backgroundColor: "var(--backgroundPrimary)", color: "white" }}
-                        onClick={clickRegister}>Complete</button>
-                </footer>
-            </div>
-        </div>}
     </>;
 };
 
