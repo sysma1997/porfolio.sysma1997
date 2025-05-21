@@ -1,0 +1,513 @@
+@import "../global.css";
+
+#menu {
+    background-color: var(--backgroundPrimary);
+    border-bottom: 0.2rem solid yellow;
+
+    position: sticky;
+    top: 0;
+}
+
+#menu .navbar-brand {
+    justify-content: space-between;
+}
+
+#menu .navbar-brand #title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#menu .navbar-brand .navbar-burger {
+    color: white;
+}
+
+#menu .navbar-item {
+    background-color: var(--backgroundPrimary);
+    color: white;
+
+    gap: 0.5rem;
+}
+
+#menu .navbar-item:hover,
+#menu .navbar-item:active,
+#menu .navbar-item:focus {
+    background-color: var(--backgroundPrimaryHover);
+}
+
+#menu .navbar-item .navbar-dropdown {
+    background-color: var(--backgroundPrimary);
+}
+
+#menu .navbar-link {
+    color: white;
+}
+
+#menu .navbar-link:hover,
+#menu .navbar-link:active,
+#menu .navbar-link:focus {
+    background-color: var(--backgroundPrimaryHover);
+}
+
+#menu .navbar-link:not(.is-arrowless)::after {
+    border-left: 3px solid white;
+    border-bottom: 3px solid white;
+}
+
+#menu #navbarMenu {
+    padding: 0;
+}
+
+.content header {
+    background-color: whitesmoke;
+    padding: 0 5rem;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.content header .description {
+    color: var(--colorPrimary);
+
+    display: flex;
+    flex-direction: column;
+}
+.content header .description .hi {
+    font-size: 2rem;
+}
+.content header .description .myName {
+    font-size: 3rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+.content header .description .myName b {
+    font-family: 'Courier New', Courier, monospace;
+}
+.content header .description .interested {
+    font-size: 1.8rem;
+    font-family: sans-serif;
+}
+
+#about {
+    margin-top: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#about .aboutContent {
+    background-color: var(--backgroundPrimary);
+    border-radius: 1rem;
+    border-bottom: 0.3rem solid var(--iconColor);
+    padding: 1rem;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+#about .aboutContent .title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+#about .aboutContent .description {
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+#about .aboutContent .title,
+#about .aboutContent .description {
+    color: white;
+}
+
+#up {
+    background-color: var(--backgroundPrimary);
+    border-radius: 50%;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    margin: 2rem;
+
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+#projects {
+    margin-top: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#projects .projectsContent {
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+}
+#projects .projectsContent .projectsList .project {
+    margin-top: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#projects .projectsContent .projectsList .project .title, 
+#projects .projectsContent .projectsList .project .content .tags .tag, 
+#projects .projectsContent .projectsList .project .links .link {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+#projects .projectsContent .projectsList .project .content {
+    width: 60%;
+}
+#projects .projectsContent .projectsList .project .content .information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+#projects .projectsContent .projectsList .project .content .tags {
+    margin-top: 1rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+#projects .projectsContent .projectsList .project .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+@media screen and (max-width: 1024px) {
+    #projects .projectsContent {
+        width: 90%;
+    }
+    #projects .projectsContent .projectsList {
+        grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    }
+
+    #projects .projectsContent .projectsList .project .content {
+        width: 90%;
+    }
+}
+
+#skills {
+    margin-top: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#skills .skillsContent {
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+}
+#skills .skillsContent .subtitle {
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+#skills .skillsContent .subtitle {
+    padding: 0.3rem 2rem;
+    margin-left: 1rem;
+}
+#skills .skillsContent .skillsList {
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    gap: 1rem;
+}
+#skills .skillsContent .skillsList .skillItem {
+    background-color: var(--backgroundPrimary);
+    border-radius: 10%;
+    box-shadow: 0 0.3rem 1rem darkgray;
+    padding: 0.5rem;
+    margin: 1rem;
+    height: 7rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#skills .skillsContent .skillsList .skillItem .skillIcon {
+    font-size: 2rem;
+}
+#skills .skillsContent .skillsList .skillItem .skillLanguage {
+    font-size: 1.2rem;
+    text-align: center;
+}
+#skills .skillsContent .skillsList .skillItem .skillIcon,
+#skills .skillsContent .skillsList .skillItem .skillLanguage {
+    color: white;
+}
+
+@media screen and (max-width: 1024px) {
+    #skills .skillsContent {
+        width: 100%;
+    }
+    #skills .skillsContent .subtitle {
+        margin: 0.5rem 1rem;
+    }
+    #skills .skillsContent .skillsList {
+        gap: 0;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    #skills .skillsContent .skillsList .skillItem {
+        box-shadow: 0 0.3rem 1rem #353535;
+    }
+}
+
+.tags {
+    width: 95%;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+    white-space: nowrap;
+    gap: 0.3rem;
+
+    /* HIDDE SCROLL FIREFOX, EDGE */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+/* HIDDE SCROLL CHROME, SAFARI, OPERA */
+.tags ::-webkit-scrollbar {
+    display: none;
+}
+.tags .tag {
+    background-color: var(--linkColorHover);
+    border-radius: 1rem;
+    color: white;
+    padding: 0.5rem;
+}
+.tags .tag i {
+    margin-right: 0.3rem;
+}
+#works {
+    margin-top: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#works .worksContent {
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+}
+#works .worksContent .worksList {
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+    gap: 1rem;
+}
+#works .worksContent .worksList .work {
+    border: 1px solid var(--backgroundPrimary);
+    border-radius: 0.3rem;
+    box-shadow: 6px 0.4rem 0.8rem 0.1rem #e5b7f5;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+#works .worksContent .worksList .work .title {
+    background-color: var(--backgroundPrimary);
+    border-bottom: 0.2rem solid var(--iconColor);
+    text-align: center;
+    padding-bottom: 0.3rem;
+}
+#works .worksContent .worksList .work .title p {
+    color: var(--iconColor);
+    font-size: 1.3rem;
+}
+#works .worksContent .worksList .work .content {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    flex: 1;
+}
+#works .worksContent .worksList .work .content .information {
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+
+    flex: 1;
+}
+#works .worksContent .worksList .work .content .information p {
+    color: var(--colorPrimary);
+    text-align: center;
+    margin: 0;
+}
+#works .worksContent .worksList .work .content .links {
+    margin-bottom: 0.5rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+#works .worksContent .worksList .work .content .links .link {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#works .worksContent .worksList .work .content .links .link i {
+    margin-right: 0.3rem;
+}
+#works .worksContent .worksList .work .content .links .link img {
+    width: 1rem;
+    margin-right: 0.3rem;
+}
+
+@media screen and (max-width: 1024px) {
+    #works .worksContent {
+        width: 90%;
+    }
+    #works .worksContent .worksList {
+        grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    #works .worksContent .worksList .work {
+        box-shadow: 6px 0.4rem 0.8rem 0.1rem #353535;
+    }
+}
+
+#contact {
+    margin-top: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#contact .contactList {
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+#contact .contactList .contactItem {
+    text-align: center;
+    margin: 0 1rem;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+}
+#contact .contactList .contactItem .contactItemIcon {
+    font-size: 3rem;
+}
+.contactList2 {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+.contactList2 .contactItemIcon {
+    font-size: 1.3rem;
+    margin-right: 0.3rem;
+}
+
+footer {
+    background-color: whitesmoke;
+    padding: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer p {
+    color: var(--linkColorHover);
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 1024px) {
+    #menu .navbar-menu.is-active {
+        padding: 0;
+    }
+    #menu .navbar-item .navbarItemIcon {
+        margin-right: 0.5rem;
+    }
+
+    .content header {
+        height: auto;
+        padding: 1rem;
+        margin: 0;
+
+        flex-direction: column-reverse;
+    }
+    .content header .description .hi {
+        margin-top: 1rem;
+    }
+    .content header .description .myName {
+        font-size: 1.5rem;
+    }
+    .content header .description .interested {
+        font-size: 1.1rem;
+    }
+
+    #about .aboutContent {
+        width: 90%;
+        margin: 1rem;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    
+    #up {
+        width: 4rem;
+        height: 4rem;
+        margin: 1rem;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .content header {
+        background-color: #281c2b;
+    }
+    footer {
+        background-color: #281c2b;
+    }
+    footer p {
+        color: var(--colorPrimary);
+    };
+}

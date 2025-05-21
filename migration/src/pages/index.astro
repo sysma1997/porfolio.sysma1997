@@ -1,0 +1,206 @@
+---
+import Contact from "../components/index/Contact.astro";
+
+import Area from "../layouts/index/Area.astro";
+
+import projects from "../assets/json/projects.json";
+import skills from "../assets/json/skills.json";
+import works from "../assets/json/works.json";
+
+import "../styles/index/index.css";
+
+const currentYear = new Date().getFullYear();
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/x-icon" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>SYSMA</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+		<script
+			src="https://kit.fontawesome.com/c8146c06e1.js"
+			crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<nav id="menu" class="navbar" role="navigation" aria-label="main navigation">
+			<div class="navbar-brand">
+				<a id="title" class="navbar-item" href="/">
+					<img src="/icon.png" alt="SYSMA" />
+				</a>
+
+				<a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+				</a>
+			</div>
+
+			<div id="navbarMenu" class="navbar-menu">
+				<div class="navbar-end">
+					<a class="navbarMenuItem navbar-item" href="#about">
+						<i class="fas fa-user"></i>
+						About
+					</a>
+					<a class="navbarMenuItem navbar-item" href="#projects">
+						<i class="fas fa-folder"></i>
+						Projects
+					</a>
+					<a class="navbarMenuItem navbar-item" href="#skills">
+						<i class="fas fa-star"></i>
+						Skills
+					</a>
+					<a class="navbarMenuItem navbar-item" href="#works">
+						<i class="fas fa-cubes"></i>
+						Works
+					</a>
+					<a class="navbarMenuItem navbar-item" href="#contact">
+						<i class="fas fa-inbox"></i>
+						Contacts
+					</a>
+				</div>
+			</div>
+		</nav>
+
+		<div class="content">
+			<header>
+				<div class="description">
+					<p class="hi">Hello!</p>
+					<p class="myName">I'm <b>SYSMA</b> a software development</p>
+					<p class="interested">Very interested in game development engines.</p>
+					<Contact styleList={false} />
+				</div>
+			</header>
+
+			<div id="about">
+				<div class="aboutContent">
+					<p class="title">About me</p>
+					<p class="description">
+						Hi! My name is Sebastian Moreno Acero, I'm from
+						Colombia and I work as a software developer.
+					</p>
+					<p class="description">
+						I have {currentYear - 2018} years experience, which I have
+						developed skills mostly in Web API in .Net Core and Node
+						js, building static web pages and mobile apps.
+					</p>
+					<p class="description">
+						I'm currently very interested in development of engines
+						with C++, OpenGL, Vulkan, DirectX and video games.
+					</p>
+				</div>
+			</div>
+
+			<Area id="projects" title="Projects">
+				<div class="projectsContent">
+					<div class="projectsList">
+						{(projects) && projects.map((project) => <div class="project">
+							<div class="title">
+								<img class="icon" src={project.icon} alt="Gum Fall icon" />
+								<p>{project.name}</p>
+							</div>
+							<div class="content">
+								<div class="information">
+									<img class="coverImage" src={project.coverImage} alt={project.name} />
+									<p class="description">{project.description}</p>
+								</div>
+								<div class="tags">
+									{project.tags.map((tag: any) => <span class="tag">
+										<i class={`${tag.icon.prefix} ${tag.icon.name}`} />
+										{tag.name}
+									</span>)}
+								</div>
+							</div>
+							<div class="links">
+								{project.links.map((link: any) => <a class="link" href={link.url} target="_blank">
+									<i class={`${link.icon.prefix} ${link.icon.name}`} />
+									{link.name}
+								</a>)}
+							</div>
+						</div>)}
+					</div>
+				</div>
+			</Area>
+			<Area id="skills" title="Skills">
+				<div class="skillsContent">
+					{(skills) && skills.map((skill, index) => <div>
+						<div class="is-flex">
+							<p class="subtitle">{skill.name}</p>
+						</div>
+						<div class="skillsList">
+							{skill.items.map((item: any, index: number) => <div class="skillItem">
+								<i class={`skillIcon ${item.icon}`} />
+								<p class="skillLanguage">{item.text}</p>
+							</div>)}
+						</div>
+					</div>)}
+				</div>
+			</Area>
+			<Area id="works" title="Works">
+				<div class="worksContent">
+					<div class="worksList">
+						{(works) && works.map((work: any) => <div class="work">
+							<div class="title">
+								<p>{work.name}</p>
+							</div>
+							<div class="content">
+								<div class="information">
+									<p class="description">{work.description}</p>
+								</div>
+								<div class="tags">
+									{work.tags.map((tag: any, index: number) => <span class="tag">
+										<i class={tag.icon} />
+										{tag.text}
+									</span>)}
+								</div>
+								{work.links && <div class="links">
+									{work.links.map((link: any, index: number) =>
+										<a class="link" href={link.href} target="_blank">
+											{(link.icon) && <i class={link.icon} />}
+											{(link.image) && <img src={link.image} alt={link.text} />}
+											{link.text}
+										</a>)}
+								</div>}
+							</div>
+						</div>)}
+					</div>
+				</div>
+			</Area>
+			
+			<Area id="contact" title="Contacts">
+				<Contact />
+			</Area>
+		</div>
+
+		<a id="up" href="#">
+			<i class="fas fa-arrow-up"></i>
+		</a>
+
+		<footer>
+			<p>Created by <b>SYSMA</b></p>
+		</footer>
+
+		<script>
+			const hamburger = document.getElementById("hamburger");
+			const navbarMenu = document.getElementById("navbarMenu");
+			const navbarMenuItem = document.querySelectorAll(".navbarMenuItem");
+
+			if (hamburger && navbarMenu && navbarMenuItem) {
+				hamburger.onclick = () => {
+					hamburger.classList.toggle("is-active");
+					navbarMenu.classList.toggle("is-active");
+				};
+
+				navbarMenuItem.forEach((item) => {
+					item.addEventListener("click", () => {
+						hamburger.classList.remove("is-active");
+						navbarMenu.classList.remove("is-active");
+					});
+				});
+			}
+		</script>
+	</body>
+</html>
