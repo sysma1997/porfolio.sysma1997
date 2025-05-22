@@ -1,0 +1,48 @@
+<nav id="menu" class="navbar is-dark" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a id="title" class="navbar-item" href="/GumFall">
+            <img src="/imgs/gum-fall-icon.png" alt="Gum Fall" />
+            <b style={{ marginLeft: 10 }}>GUM FALL</b>
+        </a>
+
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu"
+            aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbarMenuItem navbar-item" href="/GumFall/privacyPolices">
+                Privacy Polices
+            </a>
+        </div>
+        <div class="navbar-end">
+            <a class="navbarMenuItem navbar-item" href="/">
+                <img src="/icon.png" alt="sysma" />
+            </a>
+        </div>
+    </div>
+</nav>
+<script>
+    const hamburger = document.getElementById("hamburger");
+    const navbarMenu = document.getElementById("navbarMenu");
+    const navbarMenuItem = document.querySelectorAll(".navbarMenuItem");
+
+    if (hamburger && navbarMenu && navbarMenuItem) {
+        hamburger.onclick = () => {
+            hamburger.classList.toggle("is-active");
+            navbarMenu.classList.toggle("is-active");
+        };
+
+        navbarMenuItem.forEach((item) => {
+            item.addEventListener("click", () => {
+                hamburger.classList.remove("is-active");
+                navbarMenu.classList.remove("is-active");
+            });
+        });
+    }
+</script>

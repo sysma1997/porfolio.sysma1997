@@ -3,7 +3,4 @@ yarn-error.log
 yarn.lock
 dist/
 package-lock.json
-migration/.astro/
-migration/.vscode/
-migration/node_modules/
-migration/package-lock.json
+.astro/
