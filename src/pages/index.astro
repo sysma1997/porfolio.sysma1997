@@ -113,7 +113,8 @@ const currentYear = new Date().getFullYear();
 								</div>
 							</div>
 							<div class="links">
-								{project.links.map((link: any) => <a class="link" href={link.url} target="_blank">
+								{project.links.map((link: any) => <a class="link" href={link.url} 
+									target={(link.hasOwnProperty("target")) ? link.target : "_blank"}>
 									<i class={`${link.icon.prefix} ${link.icon.name}`} />
 									{link.name}
 								</a>)}
