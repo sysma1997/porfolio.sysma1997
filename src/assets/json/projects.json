@@ -18,7 +18,8 @@
             {
                 "icon": { "prefix": "fas", "name": "fa-globe" }, 
                 "name": "Web page", 
-                "url": "/GumFall"
+                "url": "/gum-fall/", 
+                "target": "_self"
             },
             {
                 "icon": { "prefix": "fab", "name": "fa-google-play" }, 
