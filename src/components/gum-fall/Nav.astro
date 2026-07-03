@@ -1,0 +1,123 @@
+---
+const { lang, showLang = true } = Astro.props as { lang: string; showLang?: boolean };
+
+const otherLang = lang === "es" ? "en" : "es";
+
+const labels: Record<string, string> = {
+    privacy: "Privacy Policy",
+    sysma: "SYSMA",
+    theme: "Theme",
+};
+
+const labelsEs: Record<string, string> = {
+    privacy: "Política de Privacidad",
+    sysma: "SYSMA",
+    theme: "Tema",
+};
+
+const navLabels = lang === "es" ? labelsEs : labels;
+---
+
+<nav id="gf-nav">
+    <a class="gf-nav-brand" href={lang === "en" ? "/gum-fall" : `/${lang}/gum-fall`}>
+        <span class="gf-brand-text">GUM FALL</span>
+    </a>
+
+    <div class="gf-nav-right">
+        <div class="gf-nav-links">
+            <a href="/gum-fall/privacy-polices">{navLabels.privacy}</a>
+            <a href={lang === "en" ? "/" : `/${lang}/`} class="gf-sysma">
+                <span class="gf-sysma-gradient">{navLabels.sysma}</span>
+            </a>
+            {showLang &&
+                <a href={otherLang === "en" ? "/gum-fall" : `/${otherLang}/gum-fall`} class="gf-icon-btn" aria-label="Language">
+                    <i class="fas fa-language"></i>
+                </a>
+            }
+            <a id="gfThemeToggle" class="gf-icon-btn" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </a>
+        </div>
+    </div>
+
+    <button id="gf-nav-toggle" class="gf-nav-toggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="gf-nav-mobile" class="gf-nav-mobile">
+        <div class="gf-nav-mobile-header">
+            <h2>GUM FALL</h2>
+            <button id="gf-nav-close" class="gf-nav-toggle" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul>
+            <li><a href="/gum-fall/privacy-polices">{navLabels.privacy}</a></li>
+            <li><a href={lang === "en" ? "/" : `/${lang}/`} class="gf-sysma">
+                <span class="gf-sysma-gradient">{navLabels.sysma}</span>
+            </a></li>
+            <li class="gf-nav-mobile-actions">
+                {showLang &&
+                    <a href={otherLang === "en" ? "/gum-fall" : `/${otherLang}/gum-fall`} class="gf-icon-btn" aria-label="Language">
+                        <i class="fas fa-language"></i> {lang === "es" ? "English" : "Español"}
+                    </a>
+                }
+                <a id="gfThemeToggleMobile" class="gf-icon-btn" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    const themeToggle = document.getElementById("gfThemeToggle");
+    const themeToggleMobile = document.getElementById("gfThemeToggleMobile");
+
+    function setThemeIcon(element, theme) {
+        const icon = element?.querySelector('i');
+        if (icon) icon.className = theme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
+    }
+
+    function toggleTheme() {
+        const current = window.localStorage.getItem("theme") || "dark";
+        const newTheme = current === "dark" ? "light" : "dark";
+        window.localStorage.setItem("theme", newTheme);
+        document.documentElement.setAttribute("data-theme", newTheme);
+        setThemeIcon(themeToggle, newTheme);
+        setThemeIcon(themeToggleMobile, newTheme);
+    }
+
+    if (themeToggle) {
+        const stored = window.localStorage.getItem("theme") || "dark";
+        setThemeIcon(themeToggle, stored);
+        themeToggle.onclick = toggleTheme;
+    }
+    if (themeToggleMobile) {
+        const stored = window.localStorage.getItem("theme") || "dark";
+        setThemeIcon(themeToggleMobile, stored);
+        themeToggleMobile.onclick = toggleTheme;
+    }
+
+    const gfToggle = document.getElementById("gf-nav-toggle");
+    const gfMobile = document.getElementById("gf-nav-mobile");
+    const gfClose = document.getElementById("gf-nav-close");
+    const gfMobileLinks = gfMobile?.querySelectorAll("ul li a");
+
+    if (gfToggle && gfMobile) {
+        gfToggle.onclick = () => gfMobile.classList.toggle("open");
+    }
+    if (gfClose && gfMobile) {
+        gfClose.onclick = () => gfMobile.classList.remove("open");
+    }
+    gfMobileLinks?.forEach((link) => {
+        link.addEventListener("click", () => gfMobile.classList.remove("open"));
+    });
+
+    document.addEventListener('click', (event) => {
+        const isOutside = !event.target.closest("#gf-nav") || event.target.closest(".gf-nav-mobile a");
+        if (isOutside && gfMobile) {
+            gfMobile.classList.remove("open");
+        }
+    });
+</script>

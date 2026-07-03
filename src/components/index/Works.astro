@@ -1,0 +1,136 @@
+---
+const { title, works, descriptions } = Astro.props as {
+    title: string;
+    works: Array<{
+        id: string;
+        name: string;
+        tags: Array<{ icon: string; text: string }>;
+        links?: Array<{ icon?: string; image?: string; text: string; href: string }>;
+    }>;
+    descriptions: Record<string, string>;
+};
+---
+
+<section id="works" class="section">
+    <div class="section-header">
+        <h2>{title}</h2>
+        <div class="section-line"></div>
+    </div>
+    <div class="grid">
+        {works && works.map((work) =>
+            <div class="card">
+                <h3>{work.name}</h3>
+                <p>{descriptions[work.id]}</p>
+                <div class="tags">
+                    {work.tags.map((tag) =>
+                        <span class="tag">
+                            <i class={tag.icon} />
+                            {tag.text}
+                        </span>
+                    )}
+                </div>
+                {work.links &&
+                    <div class="links">
+                        {work.links.map((link) =>
+                            <a href={link.href} target="_blank" rel="noopener noreferrer">
+                                {link.icon && <i class={link.icon} />}
+                                {link.image && <img src={link.image} alt={link.text} loading="lazy" />}
+                                {link.text}
+                            </a>
+                        )}
+                    </div>
+                }
+            </div>
+        )}
+    </div>
+</section>
+
+<style>
+    #works {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .grid {
+        width: 70%;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        transition: all var(--transition);
+    }
+    .card:hover {
+        border-color: var(--border-hover);
+        box-shadow: var(--shadow);
+        transform: translateY(-2px);
+    }
+    .card h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        color: var(--text);
+    }
+    .card p {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+        flex: 1;
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-bottom: 1rem;
+    }
+    .tags .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        background: rgba(113, 67, 133, 0.1);
+        color: var(--text-secondary);
+        padding: 0.25rem 0.6rem;
+        border-radius: 6px;
+        font-size: 0.8rem;
+    }
+
+    .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    .links a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.85rem;
+        color: var(--primary-hover);
+        padding: 0.35rem 0.75rem;
+        border-radius: var(--radius-sm);
+        background: rgba(113, 67, 133, 0.1);
+        transition: all var(--transition);
+    }
+    .links a:hover { background: var(--primary); color: white; }
+    .links a img { width: 16px; height: 16px; }
+
+    @media (max-width: 850px) { 
+        .grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+    }
+    @media (max-width: 480px) {
+        .grid { width: 100%; }
+    }
+</style>

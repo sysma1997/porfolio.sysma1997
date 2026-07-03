@@ -1,0 +1,45 @@
+---
+const { about } = Astro.props as {
+    about: { title: string; p1: string; p2: string; p3: string };
+};
+---
+
+<section id="about" class="section">
+    <div class="section-header">
+        <h2>{about.title}</h2>
+        <div class="section-line"></div>
+    </div>
+    <div class="card">
+        <p>{about.p1}</p>
+        <p>{about.p2}</p>
+        <p>{about.p3}</p>
+        <p>{about.p4}</p>
+    </div>
+</section>
+
+<style>
+    .card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 2.5rem;
+        max-width: 800px;
+        margin: 0 auto;
+        transition: all var(--transition);
+    }
+    .card:hover {
+        border-color: var(--border-hover);
+        box-shadow: var(--shadow);
+    }
+    .card p {
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: 1rem;
+    }
+    .card p:last-child { margin-bottom: 0; }
+
+    @media (max-width: 768px) {
+        .card { padding: 1.5rem; }
+    }
+</style>

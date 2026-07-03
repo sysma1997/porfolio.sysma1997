@@ -1,5 +1,9 @@
 ---
-const { styleList } = Astro.props;
+const { inline, lang, title } = Astro.props as {
+    inline?: boolean;
+    lang?: string;
+    title?: string;
+};
 
 const contacts: Array<{ icon: string; name: string; link: string }> = [
     {
@@ -20,15 +24,87 @@ const contacts: Array<{ icon: string; name: string; link: string }> = [
 ];
 ---
 
-<div
-    class={styleList === undefined || styleList === null || styleList === true
-        ? "contactList"
-        : "contactList2"}
->
-    {contacts.map((contact) => 
-        <a class="contactItem" href={contact.link} target="_blank">
-            <i class={`contactItemIcon ${contact.icon}`} />
-            {contact.name}
-        </a>
-    )}
-</div>
+{
+    inline ? (
+        <section class="contact-inline">
+            {contacts.map((contact) =>
+                <a href={contact.link} target="_blank" rel="noopener noreferrer">
+                    <i class={contact.icon} />
+                    {contact.name}
+                </a>
+            )}
+        </section>
+    ) : (
+        <section id="contact" class="section">
+            <div class="section-header">
+                <h2>{title}</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-grid">
+                {contacts.map((contact) =>
+                <a href={contact.link} target="_blank" rel="noopener noreferrer">
+                        <i class={contact.icon} />
+                        {contact.name}
+                    </a>
+                )}
+            </div>
+        </section>
+    )
+}
+
+<style>
+    .contact-inline {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    .contact-inline a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        transition: all var(--transition);
+    }
+    .contact-inline a i { font-size: 1.2rem; }
+    .contact-inline a:hover { color: var(--accent); }
+
+    .contact-grid {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+    .contact-grid a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1.5rem 2rem;
+        border-radius: var(--radius);
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        font-weight: 500;
+        min-width: 140px;
+        transition: all var(--transition);
+    }
+    .contact-grid a i {
+        font-size: 2rem;
+        color: var(--primary-hover);
+        transition: all var(--transition);
+    }
+    .contact-grid a:hover {
+        border-color: var(--primary);
+        color: var(--text);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px var(--primary-glow);
+    }
+    .contact-grid a:hover i { color: var(--accent); }
+
+    @media (max-width: 768px) {
+        .contact-grid { gap: 1rem; }
+        .contact-grid a { min-width: 100px; padding: 1rem 1.5rem; }
+    }
+</style>

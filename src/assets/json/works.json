@@ -1,7 +1,7 @@
 [
     {
+        "id": "library",
         "name": "Library", 
-        "description": "Simple WPF project with C#, library where you can keep track of books, clients and loans.", 
         "tags": [
             {
                 "icon": "devicon-dotnetcore-plain", 
@@ -21,8 +21,8 @@
         ]
     },
     {
+        "id": "sysma-notes",
         "name": "Sysma Notes",
-        "description": "Simple Web API project with login, registration with email confirmation, profile update, note creation, editing and deletion.",
         "tags": [
             {
                 "icon": "devicon-dotnetcore-plain",
@@ -54,8 +54,8 @@
         ]
     },
     {
+        "id": "template-webpack",
         "name": "Template for webpack with react and multiple page",
-        "description": "Simple template to use React with multiple page for servers only static files.",
         "tags": [
             {
                 "icon": "devicon-nodejs-plain",
@@ -91,8 +91,8 @@
         ]
     },
     {
+        "id": "pong",
         "name": "Pong",
-        "description": "Pong is a table tennis–themed twitch arcade sports video game, featuring simple two-dimensional graphics, manufactured by Atari and originally released in 1972.",
         "tags": [
             {
                 "icon": "devicon-godot-plain",
@@ -117,8 +117,8 @@
         ]
     },
     {
+        "id": "pacman",
         "name": "PacMan",
-        "description": "PacMan is an arcade video game created by video game designer Toru Iwatani of the Namco company, and distributed by Midway Games to the American market in the early 1980s.",
         "tags": [
             {
                 "icon": "devicon-godot-plain",

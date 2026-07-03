@@ -1,0 +1,18 @@
+---
+const { text } = Astro.props as { text: string };
+---
+
+<footer class="footer">
+    <p>{text} <b>SYSMA</b></p>
+</footer>
+
+<style>
+    .footer {
+        text-align: center;
+        padding: 2rem;
+        border-top: 1px solid var(--border);
+        color: var(--text-muted);
+        font-size: 0.9rem;
+    }
+    .footer b { color: var(--text-secondary); }
+</style>

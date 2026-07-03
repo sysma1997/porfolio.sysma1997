@@ -11,9 +11,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.7.14",
-    "astro-fontawesome": "^0.1.1",
-    "bulma": "^1.0.4"
+    "astro": "^5.7.14"
   }, 
   "repository": "git@github.com:sysma1997/porfolio.sysma1997.git",
   "author": "Sebastian Moreno Acero <sysma1997@gmail.com>"

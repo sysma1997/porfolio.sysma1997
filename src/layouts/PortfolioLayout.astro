@@ -1,0 +1,116 @@
+---
+import Nav from "../components/index/Nav.astro";
+import Hero from "../components/index/Hero.astro";
+import About from "../components/index/About.astro";
+import Projects from "../components/index/Projects.astro";
+import Skills from "../components/index/Skills.astro";
+import Works from "../components/index/Works.astro";
+import Contact from "../components/index/Contact.astro";
+import Footer from "../components/index/Footer.astro";
+
+import projects from "../assets/json/projects.json";
+import skillsData from "../assets/json/skills.json";
+import worksData from "../assets/json/works.json";
+
+import "../styles/global.css";
+
+export interface Props {
+    lang: string;
+    t: {
+        nav: Record<string, string>;
+        hero: { greeting: string; subtitle: string };
+        projects: Record<string, string>;
+        works: Record<string, string>;
+        about: { title: string; p1: string; p2: string; p3: string };
+        sections: Record<string, string>;
+        footer: string;
+    };
+}
+
+const { lang, t } = Astro.props;
+const years = new Date().getFullYear() - 2018;
+
+const siteUrl = "https://sysma1997.github.io";
+const isEn = lang === "en";
+const pageUrl = isEn ? siteUrl : `${siteUrl}/es/`;
+const desc = isEn
+    ? "Portfolio of Sebastian Moreno Acero (SYSMA), a software developer from Colombia specialized in .NET Core, Node.js, React, TypeScript and cloud infrastructure."
+    : "Portafolio de Sebastian Moreno Acero (SYSMA), desarrollador de software de Colombia especializado en .NET Core, Node.js, React, TypeScript e infraestructura en la nube.";
+
+const aboutText = {
+    ...t.about,
+    p2: t.about.p2.replace("{years}", String(years)),
+};
+---
+
+<html lang={lang}>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/x-icon" href="/favicon.png" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>SYSMA — Software Developer</title>
+        <meta name="description" content={desc} />
+        <meta property="og:title" content="SYSMA — Software Developer" />
+        <meta property="og:description" content={desc} />
+        <meta property="og:image" content={`${siteUrl}/favicon.png`} />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="SYSMA — Software Developer" />
+        <meta name="twitter:description" content={desc} />
+        <meta name="twitter:image" content={`${siteUrl}/favicon.png`} />
+        <link rel="canonical" href={pageUrl} />
+        <link rel="alternate" hreflang="en" href={siteUrl} />
+        <link rel="alternate" hreflang="es" href={`${siteUrl}/es/`} />
+        <link rel="alternate" hreflang="x-default" href={siteUrl} />
+        <script type="application/ld+json" set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Sebastian Moreno Acero",
+            "alternateName": "SYSMA",
+            "email": "sysma1997@gmail.com",
+            "url": siteUrl,
+            "jobTitle": "Software Developer",
+            "knowsAbout": [".NET Core", "Node.js", "Azure", "Docker", "React", "TypeScript", "C#"],
+            "sameAs": ["https://github.com/sysma1997", "https://www.linkedin.com/in/sebastian-moreno-acero-0a3138187"]
+        })} />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+        <script src="https://kit.fontawesome.com/c8146c06e1.js" crossorigin="anonymous"></script>
+        <script is:inline>
+            (function() {
+                var saved = localStorage.getItem("theme");
+                var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                var theme = saved || (prefersDark ? "dark" : "light");
+                document.documentElement.setAttribute("data-theme", theme);
+            })();
+        </script>
+    </head>
+    <body>
+        <a href="#main-content" class="skip-link">Skip to content</a>
+        <Nav lang={lang} />
+        <main id="main-content">
+            <Hero hero={t.hero} lang={lang} />
+            <About about={aboutText} />
+            <Projects projects={projects} title={t.sections.projects} descriptions={t.projects} />
+            <Skills skills={skillsData} title={t.sections.skills} />
+            <Works works={worksData} title={t.sections.works} descriptions={t.works} />
+            <Contact title={t.sections.contact} />
+        </main>
+        <Footer text={t.footer} />
+
+        <button id="scrollTop" class="scroll-top" aria-label="Scroll to top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <script>
+            const btn = document.getElementById("scrollTop");
+            if (btn) {
+                window.addEventListener("scroll", () => {
+                    btn.classList.toggle("visible", window.scrollY > 400);
+                });
+                btn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+        </script>
+    </body>
+</html>

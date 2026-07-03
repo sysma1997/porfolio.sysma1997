@@ -1,0 +1,157 @@
+---
+const { title, projects, descriptions } = Astro.props as {
+    title: string;
+    projects: Array<{
+        id: string;
+        name: string; icon: string; coverImage: string;
+        tags: Array<{ icon: { prefix: string; name: string }; name: string }>;
+        links: Array<{ icon: { prefix: string; name: string }; name: string; url: string; target?: string }>;
+    }>;
+    descriptions: Record<string, string>;
+};
+---
+
+<section id="projects" class="section">
+    <div class="section-header">
+        <h2>{title}</h2>
+        <div class="section-line"></div>
+    </div>
+    <div class="grid">
+        {projects && projects.map((project) =>
+            <div class="card">
+                <div class="card-header">
+                    <img src={project.icon} alt={project.name} loading="lazy" />
+                    <h3>{project.name}</h3>
+                </div>
+                <div class="card-body">
+                    <img class="cover" src={project.coverImage} alt={project.name} loading="lazy" />
+                    <p class="description">{descriptions[project.id]}</p>
+                    <div class="tags">
+                    {project.tags.map((tag) =>
+                        <span class="tag">
+                            <i class={`${tag.icon.prefix} ${tag.icon.name}`} />
+                            {tag.name}
+                        </span>
+                    )}
+                </div>
+                <div class="links">
+                    {project.links.map((link) =>
+                        <a href={link.url} target={link.target || "_blank"} rel="noopener noreferrer">
+                                <i class={`${link.icon.prefix} ${link.icon.name}`} />
+                                {link.name}
+                            </a>
+                        )}
+                    </div>
+                </div>
+            </div>
+        )}
+    </div>
+</section>
+
+<style>
+    #projects {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .grid {
+        width: 70%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 1rem;
+        justify-items: center;
+    }
+
+    .card {
+        background: var(--bg-card);
+        border-radius: var(--radius);
+        overflow: hidden;
+        transition: all var(--transition);
+    }
+    .card:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-4px);
+    }
+
+    .card-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem;
+        border-bottom: 1px solid var(--border);
+    }
+    .card-header img { width: 24px; height: 24px; border-radius: 6px; }
+    .card-header h3 { font-size: 1rem; font-weight: 500; }
+
+    .card-body { padding: 1rem; }
+    .card-body .cover {
+        border-radius: var(--radius-sm);
+        margin-bottom: 0.5rem;
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+    }
+    .card-body p {
+        color: var(--text-secondary);
+        font-size: 0.8rem;
+        line-height: 1.4;
+        margin-bottom: 0.5rem;
+
+        overflow: auto;
+        height: 120px;
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+        margin-bottom: 0.5rem;
+    }
+    .tags .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        background: rgba(113, 67, 133, 0.1);
+        color: var(--primary);
+        padding: 0.25rem 0.5rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+
+    .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+    }
+    .links a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.2rem;
+        padding: 0.4rem 0.8rem;
+        border-radius: var(--radius-sm);
+        font-size: 0.75rem;
+        font-weight: 500;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        color: var(--text-secondary);
+        transition: all var(--transition);
+    }
+    .links a:hover {
+        background: var(--primary);
+        border-color: var(--primary);
+        color: white;
+    }
+
+    @media (max-width: 850px) {
+        .grid { width: 100%; }
+        .card-body { padding: 0.5rem; }
+        .card-body p { font-size: 0.8rem; }
+    }
+
+    @media (max-width: 480px) {
+        .card { width: 100%; } /* Ajusta el ancho para que se muestre 1 por fila en pantallas muy pequeñas */
+    }
+</style>

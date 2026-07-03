@@ -1,0 +1,52 @@
+{
+    "nav": {
+        "about": "Sobre mí",
+        "projects": "Proyectos",
+        "skills": "Habilidades",
+        "works": "Trabajos",
+        "contact": "Contacto"
+    },
+    "hero": {
+        "greeting": "¡Hola! Soy",
+        "subtitle": "Un desarrollador de software muy interesado en el desarrollo de videojuegos."
+    },
+    "about": {
+        "title": "Sobre mí",
+        "p1": "¡Hola! Mi nombre es Sebastian Moreno Acero, soy de Colombia y trabajo como desarrollador de software.",
+        "p2": "Tengo {years} años de experiencia en desarrollo web, durante los cuales he adquirido habilidades principales en la creación de Web API utilizando .Net Core y Node.js. He trabajado en el desarrollo de aplicaciones web, páginas web estáticas y aplicaciones móviles.",
+        "p3": "Mi experiencia también incluye conocimientos en infraestructura de nube, con especial atención a Azure. También poseo familiaridad con comandos de Linux y experiencia en el uso de Docker.", 
+        "p4": "Actualmente estoy muy interesado en el desarrollo de videojuegos."
+    },
+    "projects": {
+        "gum-fall": "En Gum Fall, guiarás a un personaje carismático que salta y gira entre plataformas móviles continuamente. Asegúrate de esquivar obstáculos, recoger potenciadores y superar tus mejores puntuaciones. Con controles intuitivos y niveles progresivamente desafiantes, cada etapa ofrece una experiencia única e emocionante.", 
+        "jeseb-hub": "Jeseb Hub es una plataforma integral para gestionar tus finanzas personales. Permite llevar un control preciso de tus transacciones (ingresos y salidas) y separarlas en cuentas distintas, como bancos, efectivo y otras plataformas financieras. Características principales: Control Preciso, Cuentas Separadas, Categorización Avanzada, Informe Detallado, Balance General, Evolución del Balance, Top Gastos Mensuales."
+    }, 
+    "works": {
+        "library": "Proyecto sencillo en WPF con C#, una biblioteca donde puedes llevar un registro de libros, clientes y préstamos.",
+        "sysma-notes": "Proyecto simple de Web API con inicio de sesión, registro con confirmación de correo electrónico, actualización de perfil, creación, edición y eliminación de notas.",
+        "template-webpack": "Plantilla simple para usar React con múltiples páginas para servidores que solo sirven archivos estáticos.",
+        "pong": "Pong es un videojuego de arcade deportivo con temática de tenis de mesa, con gráficos bidimensionales simples, fabricado por Atari y lanzado originalmente en 1972.",
+        "pacman": "PacMan es un videojuego de arcade creado por el diseñador de videojuegos Toru Iwatani de la compañía Namco, y distribuido por Midway Games en el mercado estadounidense a principios de los años 80."
+    },
+    "gumFall": {
+        "privacy": "Política de Privacidad",
+        "p1": "Gum Fall es un juego donde te mueves entre plataformas y evitas trampas.",
+        "p2": "¡Prepárate para una acción trepidante con Gum Fall! Este emocionante juego arcade es una versión renovada del clásico Rapid Roll, ahora con gráficos impresionantes y una jugabilidad adictiva que te mantendrá pegado a la pantalla.",
+        "p3": "En Gum Fall, guiarás a un personaje carismático mientras salta y rueda a través de plataformas en constante movimiento. Asegúrate de esquivar obstáculos, recoger potenciadores y superar tus propias puntuaciones. Con controles intuitivos y niveles progresivamente desafiantes, cada etapa ofrece una experiencia única y emocionante.",
+        "features": "Características principales:",
+        "f1": "Gráficos coloridos y renovados que cautivarán tus sentidos.",
+        "f2": "Jugabilidad dinámica y rápida que te mantiene al límite.",
+        "f3": "Controles simples y fáciles de usar para jugadores de todas las edades.",
+        "f4": "Tablas de clasificación globales para competir con amigos y jugadores de todo el mundo.",
+        "cta": "Descarga Gum Fall ahora y descubre por qué todos hablan de este nuevo clásico arcade. ¡Únete a la diversión y demuestra tus habilidades!",
+        "download": "Descargar Ahora",
+        "created": "Creado por"
+    },
+    "sections": {
+        "projects": "Proyectos",
+        "skills": "Habilidades",
+        "works": "Trabajos",
+        "contact": "Contacto"
+    },
+    "footer": "Creado por"
+}

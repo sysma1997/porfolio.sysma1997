@@ -1,0 +1,92 @@
+---
+const { skills, title } = Astro.props as {
+    skills: Array<{ name: string; items: Array<{ icon: string; text: string }> }>;
+    title: string;
+};
+---
+
+<section id="skills" class="section">
+    <div class="section-header">
+        <h2>{title}</h2>
+        <div class="section-line"></div>
+    </div>
+    <div class="grid">
+        {skills && skills.map((skill) =>
+            <div class="category">
+                <h3>{skill.name}</h3>
+                <div class="items">
+                    {skill.items.map((item) =>
+                        <div class="item">
+                            <i class={item.icon} />
+                            <span>{item.text}</span>
+                        </div>
+                    )}
+                </div>
+            </div>
+        )}
+    </div>
+</section>
+
+<style>
+    #skills {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .grid {
+        width: 70%;
+
+        display: flex; 
+        flex-direction: column; 
+        gap: 2rem; 
+    }
+
+    .category h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 1rem;
+        padding-left: 0.5rem;
+        border-left: 3px solid var(--accent);
+    }
+
+    .items {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 0.75rem;
+    }
+
+    .item {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 1rem 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all var(--transition);
+        cursor: default;
+    }
+    .item:hover {
+        border-color: var(--primary);
+        background: var(--bg-card-hover);
+        transform: translateY(-2px);
+    }
+    .item i { font-size: 1.8rem; color: var(--primary-hover); }
+    .item span {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        text-align: center;
+        font-weight: 500;
+    }
+
+    @media (max-width: 850px) {
+        .grid { width: 100% }
+        .items { grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); }
+    }
+</style>
