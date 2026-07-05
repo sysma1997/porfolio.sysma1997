@@ -26,9 +26,6 @@ const navLabels = lang === "es" ? labelsEs : labels;
     <div class="gf-nav-right">
         <div class="gf-nav-links">
             <a href="/gum-fall/privacy-polices">{navLabels.privacy}</a>
-            <a href={lang === "en" ? "/" : `/${lang}/`} class="gf-sysma">
-                <span class="gf-sysma-gradient">{navLabels.sysma}</span>
-            </a>
             {showLang &&
                 <a href={otherLang === "en" ? "/gum-fall" : `/${otherLang}/gum-fall`} class="gf-icon-btn" aria-label="Language">
                     <i class="fas fa-language"></i>
@@ -36,6 +33,9 @@ const navLabels = lang === "es" ? labelsEs : labels;
             }
             <a id="gfThemeToggle" class="gf-icon-btn" aria-label="Toggle theme">
                 <i class="fas fa-moon"></i>
+            </a>
+            <a href={lang === "en" ? "/" : `/${lang}/`} class="gf-sysma">
+                <span class="gf-sysma-gradient">{navLabels.sysma}</span>
             </a>
         </div>
     </div>
@@ -74,7 +74,7 @@ const navLabels = lang === "es" ? labelsEs : labels;
     const themeToggle = document.getElementById("gfThemeToggle");
     const themeToggleMobile = document.getElementById("gfThemeToggleMobile");
 
-    function setThemeIcon(element, theme) {
+    function setThemeIcon(element: HTMLElement | null, theme: string) {
         const icon = element?.querySelector('i');
         if (icon) icon.className = theme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
     }
@@ -111,11 +111,12 @@ const navLabels = lang === "es" ? labelsEs : labels;
         gfClose.onclick = () => gfMobile.classList.remove("open");
     }
     gfMobileLinks?.forEach((link) => {
-        link.addEventListener("click", () => gfMobile.classList.remove("open"));
+        link.addEventListener("click", () => gfMobile?.classList.remove("open"));
     });
 
-    document.addEventListener('click', (event) => {
-        const isOutside = !event.target.closest("#gf-nav") || event.target.closest(".gf-nav-mobile a");
+    document.addEventListener('click', (event: MouseEvent) => {
+        const isOutside = !(event?.target as HTMLElement)?.closest("#gf-nav") || 
+            (event?.target as HTMLElement)?.closest(".gf-nav-mobile a");
         if (isOutside && gfMobile) {
             gfMobile.classList.remove("open");
         }
