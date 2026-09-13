@@ -1,57 +1,302 @@
 [
     {
-        "id": "gum-fall", 
-        "name": "Gum Fall", 
-        "icon": "/imgs/gum-fall-icon.png", 
-        "coverImage": "/imgs/gum-fall-cover-image.jpg", 
+        "id": "sysma-engine",
+        "name": "SYSMA Engine",
         "tags": [
-            { 
-                "icon": { "prefix": "fas", "name": "fa-gamepad" }, 
-                "name": "Game"
-            }, 
             {
-                "icon": { "prefix": "fas", "name": "fa-mobile-alt" }, 
-                "name": "Mobile"
-            }
-        ], 
-        "links": [
-            {
-                "icon": { "prefix": "fas", "name": "fa-globe" }, 
-                "name": "Web page", 
-                "url": "/gum-fall/", 
-                "target": "_self"
+                "icon": { "prefix": "", "name": "devicon-cplusplus-plain" },
+                "name": "C++"
             },
             {
-                "icon": { "prefix": "fab", "name": "fa-google-play" }, 
-                "name": "Google Play", 
-                "url": "https://play.google.com/store/apps/details?id=com.sysma1997.gumfall"
+                "icon": { "prefix": "", "name": "devicon-cmake-plain" },
+                "name": "CMake"
+            },
+            {
+                "icon": { "prefix": "", "name": "devicon-opengl-plain" },
+                "name": "OpenGL"
+            },
+            {
+                "icon": { "prefix": "fas", "name": "fa-microchip" },
+                "name": "Game Engine"
             }
-        ]
-    }, 
-    {
-        "id": "jeseb-hub", 
-        "name": "Jeseb Hub", 
-        "icon": "/imgs/jeseb_icon.svg", 
-        "coverImage": "/imgs/jeseb-hub-cover-image.jpg", 
-        "tags": [
-            {
-                "icon": { "prefix": "fas", "name": "fa-globe" }, 
-                "name": "Web"
-            }, 
-            {
-                "icon": { "prefix": "fas", "name": "fa-wallet" }, 
-                "name": "Finances"
-            }, 
-            {
-                "icon": { "prefix": "fab", "name": "fa-docker" }, 
-                "name": "Docker"
-            }
-        ], 
+        ],
         "links": [
             {
-                "icon": { "prefix": "fas", "name": "fa-globe" }, 
-                "name": "Web page", 
-                "url": "https://jeseb.com/"
+                "icon": { "prefix": "", "name": "devicon-github-original" },
+                "name": "Github",
+                "url": "https://github.com/sysma1997/SYSMA-Engine"
+            }
+        ]
+    },
+    {
+        "id": "engine",
+        "name": "SYSMA Engine V1",
+        "tags": [
+            {
+                "icon": { "prefix": "", "name": "devicon-cplusplus-plain" },
+                "name": "C++"
+            },
+            {
+                "icon": { "prefix": "", "name": "devicon-cmake-plain" },
+                "name": "CMake"
+            },
+            {
+                "icon": { "prefix": "fas", "name": "fa-microchip" },
+                "name": "Game Engine"
+            }
+        ],
+        "links": [
+            {
+                "icon": { "prefix": "", "name": "devicon-github-original" },
+                "name": "Github",
+                "url": "https://github.com/sysma1997/Engine"
+            }
+        ]
+    },
+    {
+        "id": "pong",
+        "name": "Pong",
+        "tags": [
+            {
+                "icon": { "prefix": "", "name": "devicon-godot-plain" },
+                "name": "GDScript"
+            },
+            {
+                "icon": { "prefix": "", "name": "devicon-godot-plain" },
+                "name": "Godot engine"
+            }
+        ],
+        "links": [
+            {
+                "icon": { "prefix": "", "name": "devicon-github-original" },
+                "name": "Github",
+                "url": "https://github.com/sysma1997/Pong"
+            },
+            {
+                "image": "/imgs/itch-io.png",
+                "name": "Itch.io",
+                "url": "https://sysma51.itch.io/pong"
+            }
+        ]
+    },
+    {
+        "id": "pacman",
+        "name": "PacMan",
+        "tags": [
+            {
+                "icon": { "prefix": "", "name": "devicon-godot-plain" },
+                "name": "GDScript"
+            },
+            {
+                "icon": { "prefix": "", "name": "devicon-godot-plain" },
+                "name": "Godot engine"
+            }
+        ],
+        "links": [
+            {
+                "icon": { "prefix": "", "name": "devicon-github-original" },
+                "name": "Github",
+                "url": "https://github.com/sysma1997/PacMan"
+            },
+            {
+                "image": "/imgs/itch-io.png",
+                "name": "Itch.io",
+                "url": "https://sysma51.itch.io/pacman"
+            }
+        ]
+    },
+    {
+        "id": "games-ia",
+        "name": "Games IA",
+        "tags": [
+            {
+                "icon": { "prefix": "", "name": "devicon-javascript-plain" },
+                "name": "JavaScript"
+            },
+            {
+                "icon": { "prefix": "", "name": "devicon-html5-plain" },
+                "name": "HTML5"
+            },
+            {
+                "icon": { "prefix": "", "name": "devicon-css3-plain" },
+                "name": "CSS"
+            },
+            {
+                "icon": { "prefix": "fas", "name": "fa-robot" },
+                "name": "AI"
+            }
+        ],
+        "links": [
+            {
+                "icon": { "prefix": "", "name": "devicon-github-original" },
+                "name": "Github",
+                "url": "https://github.com/sysma1997/games-ia"
+            }
+        ]
+    },
+    {
+        "id": "godot-cpp-cmake",
+        "name": "Godot C++ CMake",
+        "tags": [
+            {
+                "icon": { "prefix": "", "name": "devicon-cplusplus-plain" },
+                "name": "C++"
+            },
+            {
+                "icon": { "prefix": "", "name": "devicon-cmake-plain" },
+                "name": "CMake"
+            },
+            {
+                "icon": { "prefix": "", "name": "devicon-godot-plain" },
+                "name": "Godot"
+            },
+            {
+                "icon": { "prefix": "", "name": "devicon-godot-plain" },
+                "name": "GDScript"
+            }
+        ],
+        "links": [
+            {
+                "icon": { "prefix": "", "name": "devicon-github-original" },
+                "name": "Github",
+                "url": "https://github.com/sysma1997/godot-cpp-cmake"
+            }
+        ]
+    },
+    {
+        "id": "opengl-tutorial",
+        "name": "OpenGL Tutorial",
+        "tags": [
+            {
+                "icon": { "prefix": "", "name": "devicon-cplusplus-plain" },
+                "name": "C++"
+            },
+            {
+                "icon": { "prefix": "", "name": "devicon-opengl-plain" },
+                "name": "OpenGL"
+            }
+        ],
+        "links": [
+            {
+                "icon": { "prefix": "", "name": "devicon-github-original" },
+                "name": "Github",
+                "url": "https://github.com/sysma1997/opengl_tutorial"
+            }
+        ]
+    },
+    {
+        "id": "library",
+        "name": "Library",
+        "tags": [
+            {
+                "icon": { "prefix": "", "name": "devicon-dotnetcore-plain" },
+                "name": ".Net Core"
+            },
+            {
+                "icon": { "prefix": "", "name": "devicon-csharp-plain" },
+                "name": "C#"
+            }
+        ],
+        "links": [
+            {
+                "icon": { "prefix": "", "name": "devicon-github-original" },
+                "name": "Github",
+                "url": "https://github.com/sysma1997/LibraryApp"
+            }
+        ]
+    },
+    {
+        "id": "sysma-notes",
+        "name": "Sysma Notes",
+        "tags": [
+            {
+                "icon": { "prefix": "", "name": "devicon-dotnetcore-plain" },
+                "name": ".Net Core"
+            },
+            {
+                "icon": { "prefix": "", "name": "devicon-csharp-plain" },
+                "name": "C#"
+            },
+            {
+                "icon": { "prefix": "", "name": "devicon-react-plain" },
+                "name": "React"
+            },
+            {
+                "icon": { "prefix": "", "name": "devicon-typescript-plain" },
+                "name": "Typescript"
+            },
+            {
+                "icon": { "prefix": "", "name": "devicon-sass-original" },
+                "name": "Sass"
+            }
+        ],
+        "links": [
+            {
+                "icon": { "prefix": "", "name": "devicon-github-original" },
+                "name": "Github",
+                "url": "https://github.com/sysma1997/Sysma-Notes"
+            }
+        ]
+    },
+    {
+        "id": "template-webpack",
+        "name": "Template for webpack with react and multiple page",
+        "tags": [
+            {
+                "icon": { "prefix": "", "name": "devicon-nodejs-plain" },
+                "name": "NodeJS"
+            },
+            {
+                "icon": { "prefix": "", "name": "devicon-webpack-plain" },
+                "name": "Webpack"
+            },
+            {
+                "icon": { "prefix": "", "name": "devicon-babel-plain" },
+                "name": "Babel"
+            },
+            {
+                "icon": { "prefix": "", "name": "devicon-react-plain" },
+                "name": "React"
+            },
+            {
+                "icon": { "prefix": "", "name": "devicon-typescript-plain" },
+                "name": "Typescript"
+            },
+            {
+                "icon": { "prefix": "", "name": "devicon-sass-original" },
+                "name": "Sass"
+            }
+        ],
+        "links": [
+            {
+                "icon": { "prefix": "", "name": "devicon-github-original" },
+                "name": "Github",
+                "url": "https://github.com/sysma1997/template-webpack-react-multiple-page"
+            }
+        ]
+    },
+    {
+        "id": "simple-qr-generator",
+        "name": "Simple QR Generator",
+        "tags": [
+            {
+                "icon": { "prefix": "", "name": "devicon-typescript-plain" },
+                "name": "Typescript"
+            },
+            {
+                "icon": { "prefix": "", "name": "devicon-javascript-plain" },
+                "name": "JavaScript"
+            },
+            {
+                "icon": { "prefix": "", "name": "devicon-sass-original" },
+                "name": "SCSS"
+            }
+        ],
+        "links": [
+            {
+                "icon": { "prefix": "", "name": "devicon-github-original" },
+                "name": "Github",
+                "url": "https://github.com/sysma1997/simple-qr-generator"
             }
         ]
     }

@@ -3,15 +3,16 @@ const { lang } = Astro.props as { lang: string };
 
 const items = [
     { href: "#about", icon: "fas fa-user", key: "about" },
-    { href: "#projects", icon: "fas fa-folder", key: "projects" },
-    { href: "#skills", icon: "fas fa-star", key: "skills" },
+    { href: "#company", icon: "fas fa-building", key: "company" },
     { href: "#works", icon: "fas fa-cubes", key: "works" },
+    { href: "#skills", icon: "fas fa-star", key: "skills" },
+    { href: "#projects", icon: "fas fa-folder", key: "projects" },
     { href: "#contact", icon: "fas fa-inbox", key: "contact" },
 ];
 
 const labels: Record<string, string> = {
     index: "Index", 
-    about: "About", projects: "Projects", skills: "Skills",
+    about: "About", company: "Company", projects: "Projects", skills: "Skills",
     works: "Works", contact: "Contact",
 
     settings: "Settings", 
@@ -21,7 +22,7 @@ const labels: Record<string, string> = {
 
 const labelsEs: Record<string, string> = {
     index: "Indice", 
-    about: "Sobre mí", projects: "Proyectos", skills: "Habilidades",
+    about: "Sobre mí", company: "Empresa", projects: "Proyectos", skills: "Habilidades",
     works: "Trabajos", contact: "Contacto",
 
     settings: "Configuración", 

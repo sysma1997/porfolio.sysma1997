@@ -18,15 +18,28 @@
         "p4": "Actualmente estoy muy interesado en el desarrollo de videojuegos."
     },
     "projects": {
-        "gum-fall": "En Gum Fall, guiarás a un personaje carismático que salta y gira entre plataformas móviles continuamente. Asegúrate de esquivar obstáculos, recoger potenciadores y superar tus mejores puntuaciones. Con controles intuitivos y niveles progresivamente desafiantes, cada etapa ofrece una experiencia única e emocionante.", 
-        "jeseb-hub": "Jeseb Hub es una plataforma integral para gestionar tus finanzas personales. Permite llevar un control preciso de tus transacciones (ingresos y salidas) y separarlas en cuentas distintas, como bancos, efectivo y otras plataformas financieras. Características principales: Control Preciso, Cuentas Separadas, Categorización Avanzada, Informe Detallado, Balance General, Evolución del Balance, Top Gastos Mensuales."
-    }, 
-    "works": {
         "library": "Proyecto sencillo en WPF con C#, una biblioteca donde puedes llevar un registro de libros, clientes y préstamos.",
         "sysma-notes": "Proyecto simple de Web API con inicio de sesión, registro con confirmación de correo electrónico, actualización de perfil, creación, edición y eliminación de notas.",
         "template-webpack": "Plantilla simple para usar React con múltiples páginas para servidores que solo sirven archivos estáticos.",
         "pong": "Pong es un videojuego de arcade deportivo con temática de tenis de mesa, con gráficos bidimensionales simples, fabricado por Atari y lanzado originalmente en 1972.",
-        "pacman": "PacMan es un videojuego de arcade creado por el diseñador de videojuegos Toru Iwatani de la compañía Namco, y distribuido por Midway Games en el mercado estadounidense a principios de los años 80."
+        "pacman": "PacMan es un videojuego de arcade creado por el diseñador de videojuegos Toru Iwatani de la compañía Namco, y distribuido por Midway Games en el mercado estadounidense a principios de los años 80.",
+        "sysma-engine": "Mi propio motor 2D de videojuegos escrito desde cero en C++ (Versión 2). Construido con CMake y OpenGL, implementa renderizado, entrada y los sistemas centrales necesarios para crear juegos sin motores de terceros.",
+        "engine": "La versión fundacional de mi motor 2D en C++. Un motor simple para crear minijuegos 2D que luego evolucionó hasta SYSMA Engine.",
+        "games-ia": "Una colección de juegos simples (HTML5, CSS y JavaScript) construidos con GitHub Copilot, explorando cómo el desarrollo asistido por IA acelera el prototipado de juegos.",
+        "godot-cpp-cmake": "Integración del motor Godot con módulos nativos en C++ usando CMake, combinando la facilidad de GDScript con el rendimiento de C++.",
+        "opengl-tutorial": "Ruta de aprendizaje de OpenGL implementada en C++: desde lo básico de shaders y vértices hasta técnicas de renderizado, la base gráfica detrás de mi motor de juegos.",
+        "simple-qr-generator": "Un generador de códigos QR simple hecho con TypeScript y SCSS. Una herramienta web ligera y limpia para crear códigos QR al instante desde el navegador."
+    }, 
+    "works": {
+        "gum-fall": "En Gum Fall, guiarás a un personaje carismático que salta y gira entre plataformas móviles continuamente. Asegúrate de esquivar obstáculos, recoger potenciadores y superar tus mejores puntuaciones. Con controles intuitivos y niveles progresivamente desafiantes, cada etapa ofrece una experiencia única e emocionante.",
+        "jeseb-hub": "Jeseb Hub es una plataforma integral para gestionar tus finanzas personales. Permite llevar un control preciso de tus transacciones (ingresos y salidas) y separarlas en cuentas distintas, como bancos, efectivo y otras plataformas financieras. Características principales: Control Preciso, Cuentas Separadas, Categorización Avanzada, Informe Detallado, Balance General, Evolución del Balance, Top Gastos Mensuales."
+    },
+    "company": {
+        "eyebrow": "Mi empresa",
+        "name": "SysmaCloud S.A.S.",
+        "tagline": "Software que impulsa tu negocio",
+        "description": "SysmaCloud S.A.S. es mi empresa de software en Colombia: desarrollo de software a medida, infraestructura en la nube (Azure, Digital Ocean, Raspberry Pi) y SysmaCloud POS, nuestra plataforma de gestión comercial para pymes.",
+        "cta": "Ver sitio web"
     },
     "gumFall": {
         "privacy": "Política de Privacidad",

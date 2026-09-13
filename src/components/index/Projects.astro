@@ -3,9 +3,9 @@ const { title, projects, descriptions } = Astro.props as {
     title: string;
     projects: Array<{
         id: string;
-        name: string; icon: string; coverImage: string;
+        name: string; icon?: string; coverImage?: string;
         tags: Array<{ icon: { prefix: string; name: string }; name: string }>;
-        links: Array<{ icon: { prefix: string; name: string }; name: string; url: string; target?: string }>;
+        links?: Array<{ icon?: { prefix: string; name: string }; image?: string; name: string; url: string; target?: string }>;
     }>;
     descriptions: Record<string, string>;
 };
@@ -20,11 +20,11 @@ const { title, projects, descriptions } = Astro.props as {
         {projects && projects.map((project) =>
             <div class="card">
                 <div class="card-header">
-                    <img src={project.icon} alt={project.name} loading="lazy" />
+                    {project.icon && <img src={project.icon} alt={project.name} loading="lazy" />}
                     <h3>{project.name}</h3>
                 </div>
                 <div class="card-body">
-                    <img class="cover" src={project.coverImage} alt={project.name} loading="lazy" />
+                    {project.coverImage && <img class="cover" src={project.coverImage} alt={project.name} loading="lazy" />}
                     <p class="description">{descriptions[project.id]}</p>
                     <div class="tags">
                     {project.tags.map((tag) =>
@@ -35,9 +35,9 @@ const { title, projects, descriptions } = Astro.props as {
                     )}
                 </div>
                 <div class="links">
-                    {project.links.map((link) =>
+                    {project.links && project.links.map((link) =>
                         <a href={link.url} target={link.target || "_blank"} rel="noopener noreferrer">
-                                <i class={`${link.icon.prefix} ${link.icon.name}`} />
+                                {link.image ? <img src={link.image} alt={link.name} loading="lazy" /> : <i class={`${link.icon.prefix} ${link.icon.name}`} />}
                                 {link.name}
                             </a>
                         )}
@@ -57,17 +57,20 @@ const { title, projects, descriptions } = Astro.props as {
     }
 
     .grid {
-        width: 70%;
+        width: 90%;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
         gap: 1rem;
         justify-items: center;
     }
 
     .card {
+        width: 100%;
         background: var(--bg-card);
         border-radius: var(--radius);
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
         transition: all var(--transition);
     }
     .card:hover {
@@ -78,36 +81,50 @@ const { title, projects, descriptions } = Astro.props as {
     .card-header {
         display: flex;
         align-items: center;
-        gap: 0.75rem;
-        padding: 1rem;
+        gap: 0.6rem;
+        padding: 0.8rem 1rem;
         border-bottom: 1px solid var(--border);
     }
-    .card-header img { width: 24px; height: 24px; border-radius: 6px; }
-    .card-header h3 { font-size: 1rem; font-weight: 500; }
+    .card-header img { width: 20px; height: 20px; border-radius: 5px; flex-shrink: 0; }
+    .card-header h3 {
+        font-size: 0.95rem;
+        font-weight: 500;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 
-    .card-body { padding: 1rem; }
+    .card-body {
+        padding: 0.8rem 1rem 1rem;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
     .card-body .cover {
         border-radius: var(--radius-sm);
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.6rem;
         width: 100%;
         aspect-ratio: 16/9;
         object-fit: cover;
     }
-    .card-body p {
+    .card-body .description {
+        min-height: 74px;
         color: var(--text-secondary);
         font-size: 0.8rem;
-        line-height: 1.4;
-        margin-bottom: 0.5rem;
+        line-height: 1.45;
+        margin-bottom: 0.6rem;
 
-        overflow: auto;
-        height: 120px;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 
     .tags {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.35rem;
-        margin-bottom: 0.5rem;
+        gap: 0.3rem;
+        margin-bottom: 0.6rem;
     }
     .tags .tag {
         display: inline-flex;
@@ -115,9 +132,9 @@ const { title, projects, descriptions } = Astro.props as {
         gap: 0.25rem;
         background: rgba(113, 67, 133, 0.1);
         color: var(--primary);
-        padding: 0.25rem 0.5rem;
+        padding: 0.2rem 0.5rem;
         border-radius: 20px;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         font-weight: 500;
     }
 
@@ -125,14 +142,15 @@ const { title, projects, descriptions } = Astro.props as {
         display: flex;
         flex-wrap: wrap;
         gap: 0.35rem;
+        margin-top: auto;
     }
     .links a {
         display: inline-flex;
         align-items: center;
         gap: 0.2rem;
-        padding: 0.4rem 0.8rem;
+        padding: 0.3rem 0.7rem;
         border-radius: var(--radius-sm);
-        font-size: 0.75rem;
+        font-size: 0.72rem;
         font-weight: 500;
         background: var(--bg-card);
         border: 1px solid var(--border);
@@ -144,14 +162,21 @@ const { title, projects, descriptions } = Astro.props as {
         border-color: var(--primary);
         color: white;
     }
+    .links a img { width: 14px; height: 14px; }
 
-    @media (max-width: 850px) {
-        .grid { width: 100%; }
-        .card-body { padding: 0.5rem; }
-        .card-body p { font-size: 0.8rem; }
+    @media (max-width: 1024px) {
+        .grid { width: 92%; }
     }
 
-    @media (max-width: 480px) {
-        .card { width: 100%; } /* Ajusta el ancho para que se muestre 1 por fila en pantallas muy pequeñas */
+    @media (max-width: 850px) {
+        .grid {
+            width: 100%;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .grid { grid-template-columns: 1fr; }
+        .card-body { padding-bottom: 0.8rem; }
     }
 </style>

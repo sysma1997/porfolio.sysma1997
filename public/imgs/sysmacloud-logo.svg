@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="icon.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   inkscape:export-filename="icon.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:bx="https://boxy-svg.com">
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.5917969"
+     inkscape:cx="256.62822"
+     inkscape:cy="256"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <defs
+     id="defs3">
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       x1="263.96"
+       y1="112.242"
+       x2="263.96"
+       y2="378.273"
+       id="gradient-0"
+       spreadMethod="pad"
+       gradientTransform="matrix(.999988-.005047.005033.997484-1.900548 2.953468)">
+      <stop
+         offset="0"
+         style="stop-color: rgb(251, 191, 36);"
+         stop-opacity="1"
+         id="stop1" />
+      <stop
+         offset=".5"
+         style="stop-color: rgb(245, 158, 11);"
+         id="stop2" />
+      <stop
+         offset="1"
+         style="stop-color: rgb(217, 119, 6);"
+         id="stop3" />
+    </linearGradient>
+    <bx:export>
+      <bx:file
+         format="svg"
+         href="#object-2"
+         path="SysmaCloudPOS.svg" />
+    </bx:export>
+  </defs>
+  <path
+     style="stroke:none;fill-rule:nonzero;paint-order:fill;fill:url(#gradient-0)"
+     d="M284.135 118.114C269.012 108.26 250.095 112.773 243.999 117.461L172.559 162.685C154.084 172.551 149.045 181.924 149.609 192.48L149.801 303.747C152.357 313.353 155.883 319.316 165.285 324.696 165.285 324.696 227.418 361.826 240.742 369.921S266.611 382.516 281.757 372.599L363.819 323.935C376.427 316.485 379.076 306.569 378.199 294.586L377.813 192.017C377.127 177.699 371.346 171.63 361.548 165.312 361.548 165.312 291.867 122.63 284.135 118.114Z"
+     id="object-0"
+     stroke-opacity="0"
+     transform="matrix(1.888349,0,0,1.888349,-236.07492,-208.83597)"
+     inkscape:label="Background">
+    <bx:title>Background</bx:title>
+  </path>
+  <path
+     style="stroke:none;fill:rgb(255, 255, 255)"
+     d="M291.284 142.832C274.398 125.822 247.034 134.413 238.231 142.305 233.08 147.046 225.897 154.898 225.449 168.336 201.689 165.34 194.532 179.869 189.574 182.909 174.885 202.839 181.663 232.822 193.923 244.019L288.855 297.978 216.899 339.573 247.867 359.004C253.093 362.363 263.195 364.378 271.853 359.004L337.129 318.927C350.761 303.711 345.35 281.858 331.804 272.44L227.525 211.145 323.621 210.378C350.081 200.418 341.961 175.537 327.19 169.167 315.971 164.329 307.181 166.327 302.771 166.579 302.512 157.411 297.373 147.994 291.284 142.832Z"
+     id="object-1"
+     transform="matrix(1.888349,0,0,1.888349,-236.07492,-208.83597)"
+     inkscape:label="Icon">
+    <bx:title>Icon</bx:title>
+  </path>
+</svg>

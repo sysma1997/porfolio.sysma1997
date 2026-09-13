@@ -1,0 +1,140 @@
+---
+const { t } = Astro.props as {
+    t: {
+        eyebrow: string;
+        name: string;
+        tagline: string;
+        description: string;
+        cta: string;
+    };
+};
+
+const siteUrl = "https://sysmacloud.com";
+const logo = "/imgs/sysmacloud-logo.svg";
+const cover = "/imgs/sysmacloud-cover.png";
+---
+
+<section id="company" class="section">
+    <div class="banner">
+        <div class="content">
+            <span class="eyebrow">{t.eyebrow}</span>
+            <div class="brand">
+                <img class="logo" src={logo} alt={t.name} loading="lazy" />
+                <h2>{t.name}</h2>
+            </div>
+            <p class="tagline">{t.tagline}</p>
+            <p class="description">{t.description}</p>
+            <a class="btn" href={siteUrl} target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-globe"></i>
+                {t.cta}
+            </a>
+        </div>
+        <div class="visual">
+            <img class="cover" src={cover} alt={t.name} loading="lazy" />
+        </div>
+    </div>
+</section>
+
+<style>
+    #company {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .banner {
+        width: 70%;
+
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+        gap: 2.5rem;
+
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 3rem;
+
+        transition: all var(--transition);
+    }
+    .banner:hover {
+        border-color: var(--border-hover);
+        box-shadow: var(--shadow-md);
+    }
+
+    .eyebrow {
+        display: inline-block;
+        background: var(--primary-glow);
+        color: var(--primary-hover);
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        margin-bottom: 1rem;
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.5rem;
+    }
+    .brand .logo { width: 44px; height: 44px; }
+    .brand h2 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, var(--primary-hover), var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .tagline {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 0.75rem;
+    }
+
+    .description {
+        color: var(--text-secondary);
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        background: linear-gradient(135deg, var(--primary-hover), var(--accent));
+        color: white;
+        border-radius: var(--radius-sm);
+        font-weight: 600;
+        transition: all var(--transition);
+    }
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px var(--primary-glow);
+        color: white;
+    }
+
+    .visual .cover {
+        width: 100%;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow-md);
+    }
+
+    @media (max-width: 850px) {
+        .banner {
+            width: 100%;
+            grid-template-columns: 1fr;
+            padding: 1.5rem;
+        }
+    }
+</style>

@@ -1,144 +1,61 @@
 [
     {
-        "id": "library",
-        "name": "Library", 
+        "id": "gum-fall",
+        "name": "Gum Fall",
+        "icon": "/imgs/gum-fall-icon.png",
+        "coverImage": "/imgs/gum-fall-cover-image.jpg",
         "tags": [
             {
-                "icon": "devicon-dotnetcore-plain", 
-                "text": ".Net Core"
-            }, 
-            {
-                "icon": "devicon-csharp-plain", 
-                "text": "C#"
-            }
-        ], 
-        "links": [
-            {
-                "icon": "devicon-github-original", 
-                "text": "Github", 
-                "href": "https://github.com/sysma1997/LibraryApp"
-            }
-        ]
-    },
-    {
-        "id": "sysma-notes",
-        "name": "Sysma Notes",
-        "tags": [
-            {
-                "icon": "devicon-dotnetcore-plain",
-                "text": ".Net Core"
+                "icon": "fas fa-gamepad",
+                "text": "Game"
             },
             {
-                "icon": "devicon-csharp-plain",
-                "text": "C#"
-            },
-            {
-                "icon": "devicon-react-plain",
-                "text": "React"
-            },
-            {
-                "icon": "devicon-typescript-plain",
-                "text": "Typescript"
-            },
-            {
-                "icon": "devicon-sass-original",
-                "text": "Sass"
+                "icon": "fas fa-mobile-alt",
+                "text": "Mobile"
             }
         ],
         "links": [
             {
-                "icon": "devicon-github-original",
-                "text": "Github",
-                "href": "https://github.com/sysma1997/Sysma-Notes"
+                "icon": "fas fa-globe",
+                "text": "Web page",
+                "href": "/gum-fall/"
+            },
+            {
+                "icon": "fab fa-google-play",
+                "text": "Google Play",
+                "href": "https://play.google.com/store/apps/details?id=com.sysma1997.gumfall"
             }
         ]
     },
     {
-        "id": "template-webpack",
-        "name": "Template for webpack with react and multiple page",
+        "id": "jeseb-hub",
+        "name": "Jeseb Hub",
+        "icon": "/imgs/jeseb_icon.svg",
+        "coverImage": "/imgs/jeseb-hub-cover-image.jpg",
         "tags": [
             {
-                "icon": "devicon-nodejs-plain",
-                "text": "NodeJS"
+                "icon": "fas fa-globe",
+                "text": "Web"
             },
             {
-                "icon": "devicon-webpack-plain",
-                "text": "Webpack"
+                "icon": "fas fa-wallet",
+                "text": "Finances"
             },
             {
-                "icon": "devicon-babel-plain",
-                "text": "Babel"
-            },
-            {
-                "icon": "devicon-react-plain",
-                "text": "React"
-            },
-            {
-                "icon": "devicon-typescript-plain",
-                "text": "Typescript"
-            },
-            {
-                "icon": "devicon-sass-original",
-                "text": "Sass"
+                "icon": "fab fa-docker",
+                "text": "Docker"
             }
         ],
         "links": [
             {
-                "icon": "devicon-github-original",
-                "text": "Github",
-                "href": "https://github.com/sysma1997/template-webpack-react-multiple-page"
-            }
-        ]
-    },
-    {
-        "id": "pong",
-        "name": "Pong",
-        "tags": [
-            {
-                "icon": "devicon-godot-plain",
-                "text": "GDScript"
+                "icon": "fas fa-globe",
+                "text": "Web page",
+                "href": "https://jeseb.com/"
             },
-            {
-                "icon": "devicon-godot-plain",
-                "text": "Godot engine"
-            }
-        ],
-        "links": [
             {
                 "icon": "devicon-github-original",
                 "text": "Github",
-                "href": "https://github.com/sysma1997/Pong"
-            },
-            {
-                "image": "/imgs/itch-io.png",
-                "text": "Itch.io",
-                "href": "https://sysma51.itch.io/pong"
-            }
-        ]
-    },
-    {
-        "id": "pacman",
-        "name": "PacMan",
-        "tags": [
-            {
-                "icon": "devicon-godot-plain",
-                "text": "GDScript"
-            },
-            {
-                "icon": "devicon-godot-plain",
-                "text": "Godot engine"
-            }
-        ],
-        "links": [
-            {
-                "icon": "devicon-github-original",
-                "text": "Github",
-                "href": "https://github.com/sysma1997/PacMan"
-            },
-            {
-                "image": "/imgs/itch-io.png",
-                "text": "Itch.io",
-                "href": "https://sysma51.itch.io/pacman"
+                "href": "https://github.com/sysma1997/Jeseb-Hub"
             }
         ]
     }

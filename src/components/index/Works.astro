@@ -4,6 +4,7 @@ const { title, works, descriptions } = Astro.props as {
     works: Array<{
         id: string;
         name: string;
+        icon?: string; coverImage?: string;
         tags: Array<{ icon: string; text: string }>;
         links?: Array<{ icon?: string; image?: string; text: string; href: string }>;
     }>;
@@ -19,7 +20,11 @@ const { title, works, descriptions } = Astro.props as {
     <div class="grid">
         {works && works.map((work) =>
             <div class="card">
-                <h3>{work.name}</h3>
+                <div class="card-header">
+                    {work.icon && <img src={work.icon} alt={work.name} loading="lazy" />}
+                    <h3>{work.name}</h3>
+                </div>
+                {work.coverImage && <img class="cover" src={work.coverImage} alt={work.name} loading="lazy" />}
                 <p>{descriptions[work.id]}</p>
                 <div class="tags">
                     {work.tags.map((tag) =>
@@ -77,11 +82,24 @@ const { title, works, descriptions } = Astro.props as {
         box-shadow: var(--shadow);
         transform: translateY(-2px);
     }
+    .card-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+    .card-header img { width: 24px; height: 24px; border-radius: 6px; }
     .card h3 {
         font-size: 1.1rem;
         font-weight: 600;
-        margin-bottom: 0.75rem;
         color: var(--text);
+    }
+    .card .cover {
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        border-radius: var(--radius-sm);
+        margin-bottom: 0.75rem;
     }
     .card p {
         color: var(--text-secondary);
