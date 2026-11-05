@@ -5,12 +5,14 @@ const otherLang = lang === "es" ? "en" : "es";
 
 const labels: Record<string, string> = {
     privacy: "Privacy Policy",
+    service: "Terms of Service",
     sysma: "SYSMA",
     theme: "Theme",
 };
 
 const labelsEs: Record<string, string> = {
     privacy: "Política de Privacidad",
+    service: "Términos de Servicio",
     sysma: "SYSMA",
     theme: "Tema",
 };
@@ -26,6 +28,7 @@ const navLabels = lang === "es" ? labelsEs : labels;
     <div class="gf-nav-right">
         <div class="gf-nav-links">
             <a href="/gum-fall/privacy-polices">{navLabels.privacy}</a>
+            <a href="/gum-fall/terms-of-service">{navLabels.service}</a>
             {showLang &&
                 <a href={otherLang === "en" ? "/gum-fall" : `/${otherLang}/gum-fall`} class="gf-icon-btn" aria-label="Language">
                     <i class="fas fa-language"></i>
